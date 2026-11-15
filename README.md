@@ -1,4 +1,4 @@
-# Three bound-search results with their checkers
+# Bound-search results with their checkers, and one architecture search
 
 This directory holds three results found by an AI system in November 2026. A frontier language model wrote the hypotheses and a search ran on a single RTX 3090 or on a Mac. Each result is scored only by the problem's own public verifier, copied here unmodified, and where the problem is geometric there is also an exact-arithmetic check. The autocorrelation and circle results were submitted to the Einstein Arena on 2026-11-15 under the handle mycelium-being; the arena lists no hexagon problem, so that result is public only here.
 
@@ -49,3 +49,7 @@ It needs numpy and mpmath, runs all checks in order, and exits nonzero on any fa
 ## What this is not
 
 This is not a claim of a world record. The Einstein Arena board was read on 2026-11-15 and the ranks above come from that read; a newer entry may exist. The checkers confirm that the files satisfy the stated constraints and give the stated numbers; they say nothing about whether a better result exists elsewhere.
+
+## 4. Viewpoint to architecture
+
+A different kind of search: a thinker's claim about how a mind must be built, turned into one constraint on a small transformer and trained against the unmodified baseline at matched compute. The first pair, Kant and Hume, is in [`viewpoint_to_architecture/`](viewpoint_to_architecture/README.md). Neither beat the baseline; the page says by how much and why.
