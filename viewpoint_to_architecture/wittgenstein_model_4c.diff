@@ -1,0 +1,27 @@
+127c127
+<         assert config.embed_mode in ('use', 'frozen', 'use_init')
+---
+>         assert config.embed_mode in ('use', 'frozen', 'use_init', 'use_slow')
+153c153
+<         if config.embed_mode in ('frozen', 'use_init'):
+---
+>         if config.embed_mode in ('frozen', 'use_init', 'use_slow'):
+155c155
+<         if config.embed_mode == 'use_init':
+---
+>         if config.embed_mode in ('use_init', 'use_slow'):
+157a158,159
+>         self.u_decay = 0.999 if config.embed_mode == 'use_slow' else 0.9
+>         print(f"u_decay {self.u_decay}")
+188c190
+<         if self.config.embed_mode in ('use', 'use_init'):
+---
+>         if self.config.embed_mode in ('use', 'use_init', 'use_slow'):
+202c204
+<             if self.config.embed_mode in ('use', 'use_init') and self.training:
+---
+>             if self.config.embed_mode in ('use', 'use_init', 'use_slow') and self.training:
+213c215
+<                     self.U[present] = 0.9 * self.U[present] + 0.1 * sums[present] / counts[present].unsqueeze(1)
+---
+>                     self.U[present] = self.u_decay * self.U[present] + (1 - self.u_decay) * sums[present] / counts[present].unsqueeze(1)
