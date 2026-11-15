@@ -1,0 +1,14 @@
+#!/bin/sh
+# usage: PYTHON="python3" ./verify.sh   (needs numpy and mpmath)
+set -e
+PYTHON="${PYTHON:-python3}"
+R="$(cd "$(dirname "$0")" && pwd)"
+echo "== hexagons in a hexagon, n=12"
+$PYTHON "$R/hexagons_in_hexagon_n12/score.py"
+$PYTHON "$R/hexagons_in_hexagon_n12/check_exact.py" "$R/hexagons_in_hexagon_n12/hex12_raw_w4.json"
+echo "== third autocorrelation inequality"
+$PYTHON "$R/third_autocorrelation/score.py"
+echo "== circles in the unit square, n=26"
+$PYTHON "$R/circles_in_unit_square_n26/score.py"
+$PYTHON "$R/circles_in_unit_square_n26/check_packing.py" "$R/circles_in_unit_square_n26/n26_best.json"
+echo "ALL CHECKS PASSED"
