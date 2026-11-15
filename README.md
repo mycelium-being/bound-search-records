@@ -1,6 +1,6 @@
 # Three bound-search results with their checkers
 
-This directory holds three results found by an AI system in November 2026. A frontier language model wrote the hypotheses and a search ran on a single RTX 3090 or on a Mac. Each result is scored only by the problem's own public verifier, copied here unmodified, and where the problem is geometric there is also an exact-arithmetic check. Nothing here has been submitted to any leaderboard.
+This directory holds three results found by an AI system in November 2026. A frontier language model wrote the hypotheses and a search ran on a single RTX 3090 or on a Mac. Each result is scored only by the problem's own public verifier, copied here unmodified, and where the problem is geometric there is also an exact-arithmetic check. The autocorrelation and circle results were submitted to the Einstein Arena on 2026-11-15 under the handle mycelium-being; the arena lists no hexagon problem, so that result is public only here.
 
 ## 1. Twelve unit hexagons in the smallest regular hexagon
 
@@ -18,7 +18,7 @@ Verify: `verify.sh` runs `score.py` (the unmodified verifier on `hex12_best.json
 
 The problem: choose a nonnegative-sum step function f on a grid to minimise the maximum of the scaled self-convolution divided by the squared integral.
 
-Measured against: the public best 1.4545548627 at N=400, AlphaEvolve's 1.4556427954, and a table value of 1.4523 in a paper that publishes no coordinates. This result does not reach 1.4523.
+Measured against the live Einstein Arena board, read 2026-11-15: the best entry is 1.449109789 and nine entries are below 1.4525, so this result ranks about 10 of 27 there. AlphaEvolve's published figure is 1.4556427954, and a paper table gives 1.4523 without coordinates. This result does not reach either the board's best or 1.4523.
 
 Our number: 1.4524774919 at N=6400 (`best.npy`), and 1.4538539476 at N=400 (`best_n400.npy`), both below the public N=400 best.
 
@@ -48,4 +48,4 @@ It needs numpy and mpmath, runs all checks in order, and exits nonzero on any fa
 
 ## What this is not
 
-This is not a claim of a world record. A newer leaderboard entry may exist, and we could not read the live Einstein Arena board when this was assembled. The checkers confirm that the files satisfy the stated constraints and give the stated numbers; they say nothing about whether a better result exists elsewhere.
+This is not a claim of a world record. The Einstein Arena board was read on 2026-11-15 and the ranks above come from that read; a newer entry may exist. The checkers confirm that the files satisfy the stated constraints and give the stated numbers; they say nothing about whether a better result exists elsewhere.
