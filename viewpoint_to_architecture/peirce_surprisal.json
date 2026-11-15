@@ -1,0 +1,268 @@
+{
+ "config": {
+  "n_layer": 6,
+  "n_head": 6,
+  "n_embd": 384,
+  "dropout": 0.2,
+  "batch_size": 64,
+  "block_size": 256,
+  "learning_rate": 0.001,
+  "max_iters": 5000,
+  "lr_decay_iters": 5000,
+  "min_lr": 0.0001,
+  "beta2": 0.99,
+  "warmup_iters": 100,
+  "eval_interval": 250,
+  "eval_iters": 200,
+  "dataset": "shakespeare_char",
+  "compile": false,
+  "mlp_hidden": 1600
+ },
+ "config_note": "nanoGPT_kant (head 0 without q,k; c_qk 384->640, c_v 384->384; mlp_hidden=1600) with head 0's attention taken from surprisal: w[t,j]=softmax_j(surprisal[j]) over j<=t, surprisal[j]=-log p_model(x_j|x_<j) in nats (position 0: log 65), from a no-grad eval-mode (dropout off) forward of the current weights with head 0 uniform over the prefix (surprisal zeros) \u2014 the one arbitrary choice; the real forward then runs with that detached surprisal. Pass 1 runs inside torch.autocast(cache_enabled=False): a first version without it stalled at val ~2.57 because autocast's weight-cast cache, filled under no_grad, starved pass 2 of gradients (v1 logs kept: peirce_v1buggy_s*.log). Values here are v2.",
+ "params": {
+  "stock": 10745088,
+  "variant": 10745088
+ },
+ "gpu": "NVIDIA GeForce RTX 3090",
+ "torch_version": "2.6.0+cu124",
+ "seeds": [
+  1337,
+  42
+ ],
+ "curves": {
+  "1337": [
+   [
+    0,
+    4.2835,
+    4.2758
+   ],
+   [
+    250,
+    1.9746,
+    2.0831
+   ],
+   [
+    500,
+    1.537,
+    1.7258
+   ],
+   [
+    750,
+    1.3667,
+    1.58
+   ],
+   [
+    1000,
+    1.2731,
+    1.5091
+   ],
+   [
+    1250,
+    1.2006,
+    1.4758
+   ],
+   [
+    1500,
+    1.1524,
+    1.4575
+   ],
+   [
+    1750,
+    1.1019,
+    1.4559
+   ],
+   [
+    2000,
+    1.058,
+    1.4542
+   ],
+   [
+    2250,
+    1.0106,
+    1.4631
+   ],
+   [
+    2500,
+    0.9642,
+    1.4686
+   ],
+   [
+    2750,
+    0.9214,
+    1.4914
+   ],
+   [
+    3000,
+    0.8713,
+    1.5086
+   ],
+   [
+    3250,
+    0.832,
+    1.5278
+   ],
+   [
+    3500,
+    0.7888,
+    1.5477
+   ],
+   [
+    3750,
+    0.7533,
+    1.5634
+   ],
+   [
+    4000,
+    0.7182,
+    1.5909
+   ],
+   [
+    4250,
+    0.6939,
+    1.6041
+   ],
+   [
+    4500,
+    0.6717,
+    1.6229
+   ],
+   [
+    4750,
+    0.6504,
+    1.6303
+   ],
+   [
+    5000,
+    0.6349,
+    1.6465
+   ]
+  ],
+  "42": [
+   [
+    0,
+    4.2514,
+    4.2501
+   ],
+   [
+    250,
+    1.9769,
+    2.0915
+   ],
+   [
+    500,
+    1.5362,
+    1.7198
+   ],
+   [
+    750,
+    1.3707,
+    1.5892
+   ],
+   [
+    1000,
+    1.2752,
+    1.5311
+   ],
+   [
+    1250,
+    1.2074,
+    1.4927
+   ],
+   [
+    1500,
+    1.1609,
+    1.4899
+   ],
+   [
+    1750,
+    1.1072,
+    1.4706
+   ],
+   [
+    2000,
+    1.0625,
+    1.4659
+   ],
+   [
+    2250,
+    1.0172,
+    1.4685
+   ],
+   [
+    2500,
+    0.9731,
+    1.5006
+   ],
+   [
+    2750,
+    0.9272,
+    1.4946
+   ],
+   [
+    3000,
+    0.8819,
+    1.5241
+   ],
+   [
+    3250,
+    0.8406,
+    1.5397
+   ],
+   [
+    3500,
+    0.7985,
+    1.5559
+   ],
+   [
+    3750,
+    0.7616,
+    1.577
+   ],
+   [
+    4000,
+    0.7309,
+    1.5974
+   ],
+   [
+    4250,
+    0.6977,
+    1.6125
+   ],
+   [
+    4500,
+    0.6768,
+    1.6324
+   ],
+   [
+    4750,
+    0.6584,
+    1.6406
+   ],
+   [
+    5000,
+    0.6438,
+    1.6569
+   ]
+  ]
+ },
+ "final_val": {
+  "1337": 1.6465,
+  "42": 1.6569
+ },
+ "best_val_iter_and_loss": {
+  "1337": [
+   2000,
+   1.4542
+  ],
+  "42": [
+   2000,
+   1.4659
+  ]
+ },
+ "wall_seconds": {
+  "1337": 497.3,
+  "42": 497.7
+ },
+ "mean_best_val": 1.4600499999999998,
+ "mean_final_val": 1.6517
+}
