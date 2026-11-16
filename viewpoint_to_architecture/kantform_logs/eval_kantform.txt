@@ -1,0 +1,18 @@
+before 1337 info D:\mycelium\vta\nanoGPT_kantform\out-kantform-s1337\ckpt.pt iter_num 1500 best_val_loss 1.4786895513534546 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+before 1337 eval D:\mycelium\vta\nanoGPT_kantform\out-kantform-s1337\ckpt.pt D:\mycelium\vta\nanoGPT_kantform\data\shakespeare_char 1.4740
+after 1337 info D:\mycelium\vta\nanoGPT_kantform\out-ret-kantform-s1337\ckpt.pt iter_num 3500 best_val_loss 1.4990713596343994 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+after 1337 eval D:\mycelium\vta\nanoGPT_kantform\out-ret-kantform-s1337\ckpt.pt D:\mycelium\vta\nanoGPT_kantform\data\shakespeare_char 2.5494
+essays 1337 info D:\mycelium\vta\nanoGPT_kantform\out-ret-kantform-s1337\ckpt.pt iter_num 3500 best_val_loss 1.4990713596343994 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+essays 1337 eval D:\mycelium\vta\nanoGPT_kantform\out-ret-kantform-s1337\ckpt.pt D:\mycelium\vta\nanoGPT_kantform\data\pg_char 1.5030
+before 42 info D:\mycelium\vta\nanoGPT_kantform\out-kantform-s42\ckpt.pt iter_num 1750 best_val_loss 1.4751590490341187 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+before 42 eval D:\mycelium\vta\nanoGPT_kantform\out-kantform-s42\ckpt.pt D:\mycelium\vta\nanoGPT_kantform\data\shakespeare_char 1.4739
+after 42 info D:\mycelium\vta\nanoGPT_kantform\out-ret-kantform-s42\ckpt.pt iter_num 3750 best_val_loss 1.4985687732696533 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+after 42 eval D:\mycelium\vta\nanoGPT_kantform\out-ret-kantform-s42\ckpt.pt D:\mycelium\vta\nanoGPT_kantform\data\shakespeare_char 2.5958
+essays 42 info D:\mycelium\vta\nanoGPT_kantform\out-ret-kantform-s42\ckpt.pt iter_num 3750 best_val_loss 1.4985687732696533 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+essays 42 eval D:\mycelium\vta\nanoGPT_kantform\out-ret-kantform-s42\ckpt.pt D:\mycelium\vta\nanoGPT_kantform\data\pg_char 1.5028
+before 7 info D:\mycelium\vta\nanoGPT_kantform\out-kantform-s7\ckpt.pt iter_num 1750 best_val_loss 1.4552441835403442 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+before 7 eval D:\mycelium\vta\nanoGPT_kantform\out-kantform-s7\ckpt.pt D:\mycelium\vta\nanoGPT_kantform\data\shakespeare_char 1.4555
+after 7 info D:\mycelium\vta\nanoGPT_kantform\out-ret-kantform-s7\ckpt.pt iter_num 3750 best_val_loss 1.5126911401748657 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+after 7 eval D:\mycelium\vta\nanoGPT_kantform\out-ret-kantform-s7\ckpt.pt D:\mycelium\vta\nanoGPT_kantform\data\shakespeare_char 2.5394
+essays 7 info D:\mycelium\vta\nanoGPT_kantform\out-ret-kantform-s7\ckpt.pt iter_num 3750 best_val_loss 1.5126911401748657 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+essays 7 eval D:\mycelium\vta\nanoGPT_kantform\out-ret-kantform-s7\ckpt.pt D:\mycelium\vta\nanoGPT_kantform\data\pg_char 1.5139
