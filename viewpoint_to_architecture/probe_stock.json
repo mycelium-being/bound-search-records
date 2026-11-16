@@ -1,0 +1,2267 @@
+{
+ "config": {
+  "batches": 10,
+  "fit_batches": 8,
+  "heldout_batches": 2,
+  "block": 256,
+  "batch": 64,
+  "seed": 1337,
+  "ridge": "1e-3 * n_fit_rows",
+  "adam_lr": 0.01,
+  "adam_steps": 500,
+  "targets": [
+   "position",
+   "current",
+   "previous"
+  ]
+ },
+ "gpu": "NVIDIA GeForce RTX 3090",
+ "torch_version": "2.6.0+cu124",
+ "seeds": [
+  "1337",
+  "42",
+  "7"
+ ],
+ "heads": {
+  "1337": {
+   "L0H0": {
+    "position": {
+     "score": 0.9699297446760354,
+     "shuffled": 0.002657453941014576,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.28973388671875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.9593750834465027,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H1": {
+    "position": {
+     "score": 0.9709959375128724,
+     "shuffled": 0.0025511353740582665,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.275634765625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.9532782435417175,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H2": {
+    "position": {
+     "score": 0.8617784515044615,
+     "shuffled": 0.0010399281900680402,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.28118896484375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.9605699181556702,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H3": {
+    "position": {
+     "score": 0.9684498575949937,
+     "shuffled": 0.0035836621484270914,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.209136962890625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.3043198585510254,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H4": {
+    "position": {
+     "score": 0.8106580976279235,
+     "shuffled": 0.00016910700695205172,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.221649169921875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.26862746477127075,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H5": {
+    "position": {
+     "score": 0.9811437594067335,
+     "shuffled": 0.002656962416363484,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.266876220703125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.6902267336845398,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H0": {
+    "position": {
+     "score": 0.9365635972708302,
+     "shuffled": 0.0023354896454198526,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.1827392578125,
+     "shuffled": 0.149627685546875,
+     "majority": 0.149658203125,
+     "above_chance": false
+    },
+    "previous": {
+     "score": 0.21519608795642853,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H1": {
+    "position": {
+     "score": 0.9803835953184074,
+     "shuffled": 0.004474103519040207,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.209381103515625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.21878065168857574,
+     "shuffled": 0.149417906999588,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H2": {
+    "position": {
+     "score": 0.9742161870386477,
+     "shuffled": 0.003905784702615156,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.183563232421875,
+     "shuffled": 0.14959716796875,
+     "majority": 0.149658203125,
+     "above_chance": false
+    },
+    "previous": {
+     "score": 0.2165134996175766,
+     "shuffled": 0.14947918057441711,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H3": {
+    "position": {
+     "score": 0.9504764684788257,
+     "shuffled": 0.0013343986349493298,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.174468994140625,
+     "shuffled": 0.14971923828125,
+     "majority": 0.149658203125,
+     "above_chance": false
+    },
+    "previous": {
+     "score": 0.21320466697216034,
+     "shuffled": 0.14963236451148987,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H4": {
+    "position": {
+     "score": 0.9759469121938962,
+     "shuffled": 0.0029801628822382353,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.304443359375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.3912377655506134,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H5": {
+    "position": {
+     "score": 0.9749875748688779,
+     "shuffled": 0.0033680221107252883,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.21484375,
+     "shuffled": 0.149688720703125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.22852329909801483,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H0": {
+    "position": {
+     "score": 0.9588414754502499,
+     "shuffled": -0.0006619950628290461,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.18988037109375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": false
+    },
+    "previous": {
+     "score": 0.1985906958580017,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": false
+    }
+   },
+   "L2H1": {
+    "position": {
+     "score": 0.8427227797238392,
+     "shuffled": 0.00323940519711563,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.318389892578125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.7152574062347412,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H2": {
+    "position": {
+     "score": 0.906598131530867,
+     "shuffled": 0.0035665833393239144,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.28143310546875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.3682291805744171,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H3": {
+    "position": {
+     "score": 0.9786852869605044,
+     "shuffled": 0.0024419879541011102,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.24554443359375,
+     "shuffled": 0.149627685546875,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.25165441632270813,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H4": {
+    "position": {
+     "score": 0.9739794312637883,
+     "shuffled": 0.0019411520005484517,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.27508544921875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.26663604378700256,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H5": {
+    "position": {
+     "score": 0.9583603514945217,
+     "shuffled": 0.0034291636228913625,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.2874755859375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.5219669342041016,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H0": {
+    "position": {
+     "score": 0.6202833475506679,
+     "shuffled": -0.0012490985029653956,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.25897216796875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.3087010085582733,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H1": {
+    "position": {
+     "score": 0.77241723868585,
+     "shuffled": 0.003458261848479083,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.265869140625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.3384191393852234,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H2": {
+    "position": {
+     "score": 0.7493993513481956,
+     "shuffled": 0.0011927526903653396,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.268951416015625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.24868261814117432,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H3": {
+    "position": {
+     "score": 0.6928770286686603,
+     "shuffled": 0.002102626716377509,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.26239013671875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2886948585510254,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H4": {
+    "position": {
+     "score": 0.6037771646022443,
+     "shuffled": -0.0007332912614166354,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.262176513671875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.3415135145187378,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H5": {
+    "position": {
+     "score": 0.7097855587594957,
+     "shuffled": 0.004378671299648418,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.26025390625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.28728556632995605,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H0": {
+    "position": {
+     "score": 0.677809291207924,
+     "shuffled": 0.0029736313265420478,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.30743408203125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2747242748737335,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H1": {
+    "position": {
+     "score": 0.6337460555951003,
+     "shuffled": 0.0024100437284693133,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.315338134765625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.28606006503105164,
+     "shuffled": 0.14957109093666077,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H2": {
+    "position": {
+     "score": 0.7218367711018674,
+     "shuffled": 0.0027707842236230906,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.30572509765625,
+     "shuffled": 0.149688720703125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.26626840233802795,
+     "shuffled": 0.14963236451148987,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H3": {
+    "position": {
+     "score": 0.7251475006287544,
+     "shuffled": 0.0047050602344246295,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.324127197265625,
+     "shuffled": 0.149749755859375,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.25404414534568787,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H4": {
+    "position": {
+     "score": 0.7507655622157471,
+     "shuffled": -0.0005599640185143251,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.2725830078125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.22708334028720856,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H5": {
+    "position": {
+     "score": 0.7966950299449703,
+     "shuffled": 0.0032621341335916654,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.324066162109375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.26917892694473267,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H0": {
+    "position": {
+     "score": 0.7461647875574566,
+     "shuffled": 0.003356437283171365,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.310150146484375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2266850620508194,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H1": {
+    "position": {
+     "score": 0.7972692096009241,
+     "shuffled": 0.0018147621228182809,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.32794189453125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.24341300129890442,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H2": {
+    "position": {
+     "score": 0.8130434199982661,
+     "shuffled": 0.003942689688356205,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.370208740234375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2540747821331024,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H3": {
+    "position": {
+     "score": 0.7984744631174874,
+     "shuffled": -0.0009977215195653422,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.278076171875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.21519608795642853,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H4": {
+    "position": {
+     "score": 0.7935446289219861,
+     "shuffled": 0.00354105521495085,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.281097412109375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.20793506503105164,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H5": {
+    "position": {
+     "score": 0.6826563372703284,
+     "shuffled": -0.0031484693573742284,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.35614013671875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.23780637979507446,
+     "shuffled": 0.14966300129890442,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   }
+  },
+  "42": {
+   "L0H0": {
+    "position": {
+     "score": 0.8517018530913384,
+     "shuffled": -7.605358867701639e-05,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.27984619140625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.9622243046760559,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H1": {
+    "position": {
+     "score": 0.9741616604662559,
+     "shuffled": 0.002405388568350042,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.2750244140625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.9531556963920593,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H2": {
+    "position": {
+     "score": 0.981656908685418,
+     "shuffled": 0.003506597900036379,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.273223876953125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.9588541984558105,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H3": {
+    "position": {
+     "score": 0.898612690423494,
+     "shuffled": 0.0011167013586219632,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.239501953125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.26403188705444336,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H4": {
+    "position": {
+     "score": 0.9114997069759657,
+     "shuffled": 0.0007578369534756435,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.209564208984375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2767156958580017,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H5": {
+    "position": {
+     "score": 0.9866392071971664,
+     "shuffled": 0.0036995820947277602,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.27392578125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.7766544818878174,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H0": {
+    "position": {
+     "score": 0.9578554945657358,
+     "shuffled": 0.003865767803203468,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.302398681640625,
+     "shuffled": 0.1494140625,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.4840073883533478,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H1": {
+    "position": {
+     "score": 0.9563916045925182,
+     "shuffled": 0.0031919471217228823,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.182464599609375,
+     "shuffled": 0.149505615234375,
+     "majority": 0.149658203125,
+     "above_chance": false
+    },
+    "previous": {
+     "score": 0.21231618523597717,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H2": {
+    "position": {
+     "score": 0.9872389092586529,
+     "shuffled": 0.003185663373271086,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.256195068359375,
+     "shuffled": 0.149627685546875,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2610906958580017,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H3": {
+    "position": {
+     "score": 0.9549422501018152,
+     "shuffled": 0.0015787242173308513,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.329254150390625,
+     "shuffled": 0.149627685546875,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.6883578896522522,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H4": {
+    "position": {
+     "score": 0.96433935474872,
+     "shuffled": 0.0017242377889953309,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.174285888671875,
+     "shuffled": 0.1495361328125,
+     "majority": 0.149658203125,
+     "above_chance": false
+    },
+    "previous": {
+     "score": 0.19776348769664764,
+     "shuffled": 0.14944854378700256,
+     "majority": 0.14960172772407532,
+     "above_chance": false
+    }
+   },
+   "L1H5": {
+    "position": {
+     "score": 0.9685408159217809,
+     "shuffled": -0.0009157088097011545,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.179656982421875,
+     "shuffled": 0.149566650390625,
+     "majority": 0.149658203125,
+     "above_chance": false
+    },
+    "previous": {
+     "score": 0.20805761218070984,
+     "shuffled": 0.14950981736183167,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H0": {
+    "position": {
+     "score": 0.9528680394262484,
+     "shuffled": 0.0021280276139648002,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.2430419921875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.3353860378265381,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H1": {
+    "position": {
+     "score": 0.9266380061818072,
+     "shuffled": 0.003490016380487959,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.2706298828125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.30272674560546875,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H2": {
+    "position": {
+     "score": 0.9213687608763067,
+     "shuffled": 0.001535989344928379,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.318695068359375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.7186887860298157,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H3": {
+    "position": {
+     "score": 0.9081445382843225,
+     "shuffled": 0.002857209762716195,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.26947021484375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.40652576088905334,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H4": {
+    "position": {
+     "score": 0.9880541844697633,
+     "shuffled": 0.001338982851008974,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.229827880859375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.23314952850341797,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H5": {
+    "position": {
+     "score": 0.9673458686426096,
+     "shuffled": 8.439361294809711e-05,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.25885009765625,
+     "shuffled": 0.14971923828125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.31786152720451355,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H0": {
+    "position": {
+     "score": 0.8257138705275915,
+     "shuffled": -0.0009118748872967153,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.2230224609375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2366728037595749,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H1": {
+    "position": {
+     "score": 0.7195196822152763,
+     "shuffled": 0.00397615880396851,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.243194580078125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.24185051023960114,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H2": {
+    "position": {
+     "score": 0.7644277399162317,
+     "shuffled": -0.000518071589165725,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.28717041015625,
+     "shuffled": 0.14971923828125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.28630515933036804,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H3": {
+    "position": {
+     "score": 0.7380273481632563,
+     "shuffled": 0.004853156883075416,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.25439453125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.33694854378700256,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H4": {
+    "position": {
+     "score": 0.6430210963211073,
+     "shuffled": 0.0013720190565131851,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.272491455078125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.4237745404243469,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H5": {
+    "position": {
+     "score": 0.7441740688485968,
+     "shuffled": 0.0035683420414381883,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.2342529296875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.23333334922790527,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H0": {
+    "position": {
+     "score": 0.8652676802697371,
+     "shuffled": -0.0004980557103944072,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.268218994140625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.1882353127002716,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": false
+    }
+   },
+   "L4H1": {
+    "position": {
+     "score": 0.7699349210733751,
+     "shuffled": 0.00477394731425651,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.2403564453125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.22552084922790527,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H2": {
+    "position": {
+     "score": 0.8401539858928325,
+     "shuffled": 0.003737952229371677,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.2196044921875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.21292893588542938,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H3": {
+    "position": {
+     "score": 0.7782401402720531,
+     "shuffled": 0.0033023396368995206,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.3382568359375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2897978127002716,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H4": {
+    "position": {
+     "score": 0.7939942062547567,
+     "shuffled": 0.0033547486676869243,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.298828125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2470282018184662,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H5": {
+    "position": {
+     "score": 0.7328404146512627,
+     "shuffled": 0.0012790241599739405,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.27996826171875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2705269753932953,
+     "shuffled": 0.14957109093666077,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H0": {
+    "position": {
+     "score": 0.814164751286631,
+     "shuffled": -0.00021821399222687887,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.319671630859375,
+     "shuffled": 0.149505615234375,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.24387256801128387,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H1": {
+    "position": {
+     "score": 0.8332744881768329,
+     "shuffled": 0.0033507742108200844,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.3131103515625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.22708334028720856,
+     "shuffled": 0.14944854378700256,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H2": {
+    "position": {
+     "score": 0.8329102476550996,
+     "shuffled": 0.0034455579742150855,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.285308837890625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.21090687811374664,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H3": {
+    "position": {
+     "score": 0.7943373972207273,
+     "shuffled": -0.0010252028928019463,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.3238525390625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.23054535686969757,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H4": {
+    "position": {
+     "score": 0.8223978381626043,
+     "shuffled": 0.0066216986799308986,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.36199951171875,
+     "shuffled": 0.14971923828125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2598345875740051,
+     "shuffled": 0.14963236451148987,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H5": {
+    "position": {
+     "score": 0.7878046169268446,
+     "shuffled": 0.004856260819527836,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.334136962890625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.28765320777893066,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   }
+  },
+  "7": {
+   "L0H0": {
+    "position": {
+     "score": 0.9692889608253156,
+     "shuffled": 0.00043577383334436615,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.2738037109375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.9545649886131287,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H1": {
+    "position": {
+     "score": 0.9693058792713882,
+     "shuffled": 0.002412180788474938,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.275543212890625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.9534007906913757,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H2": {
+    "position": {
+     "score": 0.9460146886877367,
+     "shuffled": 0.0029414943824639384,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.279510498046875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.9820772409439087,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H3": {
+    "position": {
+     "score": 0.9212490263016886,
+     "shuffled": 0.0021702706443492703,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.22320556640625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2669117748737335,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H4": {
+    "position": {
+     "score": 0.9568472559761209,
+     "shuffled": 0.0032198370856920677,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.197479248046875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": false
+    },
+    "previous": {
+     "score": 0.27916666865348816,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L0H5": {
+    "position": {
+     "score": 0.970240955689887,
+     "shuffled": 0.0016533485928679204,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.271270751953125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.7693934440612793,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H0": {
+    "position": {
+     "score": 0.9854635426167127,
+     "shuffled": 0.0032523977352615363,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.223388671875,
+     "shuffled": 0.14959716796875,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2287377566099167,
+     "shuffled": 0.14972427487373352,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H1": {
+    "position": {
+     "score": 0.9880291815391642,
+     "shuffled": 0.0017378024540025683,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.245758056640625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.270955890417099,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H2": {
+    "position": {
+     "score": 0.9345390061849429,
+     "shuffled": 0.00233482898558357,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.17352294921875,
+     "shuffled": 0.14959716796875,
+     "majority": 0.149658203125,
+     "above_chance": false
+    },
+    "previous": {
+     "score": 0.2054228037595749,
+     "shuffled": 0.14963236451148987,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H3": {
+    "position": {
+     "score": 0.8091597093324421,
+     "shuffled": 0.002598470214326576,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.373626708984375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.8469057083129883,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H4": {
+    "position": {
+     "score": 0.9585394871679773,
+     "shuffled": 0.0016644790913158403,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.171905517578125,
+     "shuffled": 0.14971923828125,
+     "majority": 0.149658203125,
+     "above_chance": false
+    },
+    "previous": {
+     "score": 0.20067402720451355,
+     "shuffled": 0.1493566334247589,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L1H5": {
+    "position": {
+     "score": 0.95734245271055,
+     "shuffled": 0.00041869718399967226,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.1826171875,
+     "shuffled": 0.149749755859375,
+     "majority": 0.149658203125,
+     "above_chance": false
+    },
+    "previous": {
+     "score": 0.18388481438159943,
+     "shuffled": 0.14954045414924622,
+     "majority": 0.14960172772407532,
+     "above_chance": false
+    }
+   },
+   "L2H0": {
+    "position": {
+     "score": 0.8682775680263157,
+     "shuffled": 0.003001687312219392,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.31915283203125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.6512255072593689,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H1": {
+    "position": {
+     "score": 0.9809115027841327,
+     "shuffled": 0.0023784672223451375,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.262176513671875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2566176652908325,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H2": {
+    "position": {
+     "score": 0.9464893240804199,
+     "shuffled": 0.002468165703240599,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.255279541015625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.34595590829849243,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H3": {
+    "position": {
+     "score": 0.8460528497819451,
+     "shuffled": 0.0053342537126667144,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.231201171875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.33826595544815063,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H4": {
+    "position": {
+     "score": 0.9733848971585587,
+     "shuffled": 0.00022232086365914228,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.19293212890625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": false
+    },
+    "previous": {
+     "score": 0.20435050129890442,
+     "shuffled": 0.14929534494876862,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L2H5": {
+    "position": {
+     "score": 0.9308781166419428,
+     "shuffled": 0.00459851812095613,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.288604736328125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.5505208373069763,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H0": {
+    "position": {
+     "score": 0.7361615311531944,
+     "shuffled": -0.0025562375065952825,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.23748779296875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.22392770648002625,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H1": {
+    "position": {
+     "score": 0.7816873169464814,
+     "shuffled": 0.005347757377641704,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.246429443359375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2795649766921997,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H2": {
+    "position": {
+     "score": 0.7273341794382815,
+     "shuffled": -0.00024809024121297263,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.2574462890625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2780943810939789,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H3": {
+    "position": {
+     "score": 0.7197051797977423,
+     "shuffled": -0.00037880823896685456,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.249847412109375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2545343339443207,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H4": {
+    "position": {
+     "score": 0.6173821963267755,
+     "shuffled": 0.008699381965157404,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.31024169921875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.49350494146347046,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L3H5": {
+    "position": {
+     "score": 0.7400621802411456,
+     "shuffled": 0.003374803705857521,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.263397216796875,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.31724879145622253,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H0": {
+    "position": {
+     "score": 0.6459092922393459,
+     "shuffled": 0.001490138749501102,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.31182861328125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.26881128549575806,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H1": {
+    "position": {
+     "score": 0.7576127721823134,
+     "shuffled": 0.0023658817747334027,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.252471923828125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.24347427487373352,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H2": {
+    "position": {
+     "score": 0.7510917765081269,
+     "shuffled": 0.005201367877532004,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.271392822265625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2369179129600525,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H3": {
+    "position": {
+     "score": 0.7407470560118745,
+     "shuffled": 0.006201542692376272,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.345123291015625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.25603556632995605,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H4": {
+    "position": {
+     "score": 0.7930854976484271,
+     "shuffled": 0.0029914601827953913,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.267181396484375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.23017771542072296,
+     "shuffled": 0.14950981736183167,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L4H5": {
+    "position": {
+     "score": 0.8237800436785087,
+     "shuffled": 0.001545412277028202,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.28961181640625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.26663604378700256,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H0": {
+    "position": {
+     "score": 0.7756769428740676,
+     "shuffled": 0.004797716223958193,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.331695556640625,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.24607844650745392,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H1": {
+    "position": {
+     "score": 0.8333635337933492,
+     "shuffled": 0.004528976594934564,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.300872802734375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.22003677487373352,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H2": {
+    "position": {
+     "score": 0.8246809372540747,
+     "shuffled": -0.002011412836338655,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.299102783203125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.24258579313755035,
+     "shuffled": 0.14957109093666077,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H3": {
+    "position": {
+     "score": 0.7929359231860488,
+     "shuffled": 0.0014139880357475487,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.346038818359375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.242677703499794,
+     "shuffled": 0.14957109093666077,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H4": {
+    "position": {
+     "score": 0.8276857270340724,
+     "shuffled": 0.0033946089319230044,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.337921142578125,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.2397671639919281,
+     "shuffled": 0.14957109093666077,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   },
+   "L5H5": {
+    "position": {
+     "score": 0.7942823020874299,
+     "shuffled": 0.0027063178866869597,
+     "above_chance": true
+    },
+    "current": {
+     "score": 0.312103271484375,
+     "shuffled": 0.149658203125,
+     "majority": 0.149658203125,
+     "above_chance": true
+    },
+    "previous": {
+     "score": 0.22769609093666077,
+     "shuffled": 0.14960172772407532,
+     "majority": 0.14960172772407532,
+     "above_chance": true
+    }
+   }
+  }
+ },
+ "mean_over_seeds": {
+  "L0H0": {
+   "position": 0.9303068528642298,
+   "current": 0.2811279296875,
+   "previous": 0.9587214589118958
+  },
+  "L0H1": {
+   "position": 0.9714878257501721,
+   "current": 0.2754007975260417,
+   "previous": 0.9532782435417175
+  },
+  "L0H2": {
+   "position": 0.9298166829592054,
+   "current": 0.2779744466145833,
+   "previous": 0.9671671191851298
+  },
+  "L0H3": {
+   "position": 0.9294371914400589,
+   "current": 0.22394816080729166,
+   "previous": 0.27842117349306744
+  },
+  "L0H4": {
+   "position": 0.8930016868600034,
+   "current": 0.209564208984375,
+   "previous": 0.2748366097609202
+  },
+  "L0H5": {
+   "position": 0.9793413074312621,
+   "current": 0.27069091796875,
+   "previous": 0.7454248865445455
+  },
+  "L1H0": {
+   "position": 0.9599608781510929,
+   "current": 0.236175537109375,
+   "previous": 0.30931374430656433
+  },
+  "L1H1": {
+   "position": 0.9749347938166966,
+   "current": 0.21253458658854166,
+   "previous": 0.23401757578055063
+  },
+  "L1H2": {
+   "position": 0.9653313674940812,
+   "current": 0.20442708333333334,
+   "previous": 0.22767566641171774
+  },
+  "L1H3": {
+   "position": 0.9048594759710277,
+   "current": 0.292449951171875,
+   "previous": 0.5828227549791336
+  },
+  "L1H4": {
+   "position": 0.9662752513701979,
+   "current": 0.21687825520833334,
+   "previous": 0.26322509348392487
+  },
+  "L1H5": {
+   "position": 0.9669569478337362,
+   "current": 0.19237263997395834,
+   "previous": 0.20682190855344137
+  },
+  "L2H0": {
+   "position": 0.9266623609676047,
+   "current": 0.2506917317708333,
+   "previous": 0.39506741364796955
+  },
+  "L2H1": {
+   "position": 0.9167574295632598,
+   "current": 0.2837320963541667,
+   "previous": 0.42486727237701416
+  },
+  "L2H2": {
+   "position": 0.9248187388291979,
+   "current": 0.2851359049479167,
+   "previous": 0.4776246249675751
+  },
+  "L2H3": {
+   "position": 0.9109608916755906,
+   "current": 0.24873860677083334,
+   "previous": 0.3321487108866374
+  },
+  "L2H4": {
+   "position": 0.9784728376307035,
+   "current": 0.23261515299479166,
+   "previous": 0.234712024529775
+  },
+  "L2H5": {
+   "position": 0.9521947789263581,
+   "current": 0.2783101399739583,
+   "previous": 0.46344976623853046
+  },
+  "L3H0": {
+   "position": 0.727386249743818,
+   "current": 0.23982747395833334,
+   "previous": 0.2564338395992915
+  },
+  "L3H1": {
+   "position": 0.7578747459492026,
+   "current": 0.2518310546875,
+   "previous": 0.28661154210567474
+  },
+  "L3H2": {
+   "position": 0.7470537569009029,
+   "current": 0.2711893717447917,
+   "previous": 0.2710273861885071
+  },
+  "L3H3": {
+   "position": 0.7168698522098863,
+   "current": 0.2555440266927083,
+   "previous": 0.2933925787607829
+  },
+  "L3H4": {
+   "position": 0.6213934857500423,
+   "current": 0.2816365559895833,
+   "previous": 0.41959766546885174
+  },
+  "L3H5": {
+   "position": 0.7313406026164126,
+   "current": 0.2526346842447917,
+   "previous": 0.27928923567136127
+  },
+  "L4H0": {
+   "position": 0.7296620879056691,
+   "current": 0.2958272298177083,
+   "previous": 0.24392362435658774
+  },
+  "L4H1": {
+   "position": 0.7204312496169297,
+   "current": 0.2693888346354167,
+   "previous": 0.25168506304423016
+  },
+  "L4H2": {
+   "position": 0.7710275111676089,
+   "current": 0.2655741373697917,
+   "previous": 0.2387050837278366
+  },
+  "L4H3": {
+   "position": 0.748044898970894,
+   "current": 0.3358357747395833,
+   "previous": 0.2666258414586385
+  },
+  "L4H4": {
+   "position": 0.7792817553729768,
+   "current": 0.2795308430989583,
+   "previous": 0.23476308584213257
+  },
+  "L4H5": {
+   "position": 0.7844384960915806,
+   "current": 0.297882080078125,
+   "previous": 0.2687806487083435
+  },
+  "L5H0": {
+   "position": 0.7786688272393851,
+   "current": 0.3205057779947917,
+   "previous": 0.2388786921898524
+  },
+  "L5H1": {
+   "position": 0.821302410523702,
+   "current": 0.3139750162760417,
+   "previous": 0.2301777054866155
+  },
+  "L5H2": {
+   "position": 0.8235448683024801,
+   "current": 0.318206787109375,
+   "previous": 0.2358558177947998
+  },
+  "L5H3": {
+   "position": 0.7952492611747545,
+   "current": 0.3159891764322917,
+   "previous": 0.22947304944197336
+  },
+  "L5H4": {
+   "position": 0.8145427313728876,
+   "current": 0.3270060221354167,
+   "previous": 0.23584560553232828
+  },
+  "L5H5": {
+   "position": 0.7549144187615342,
+   "current": 0.3341267903645833,
+   "previous": 0.2510518928368886
+  }
+ }
+}
