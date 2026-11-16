@@ -1,0 +1,8 @@
+45c45
+<         w_ = torch.where(d_ >= 0, torch.exp(-self.lam * d_), torch.zeros_like(d_))
+---
+>         w_ = torch.where(d_ >= 0, torch.ones_like(d_), torch.zeros_like(d_))
+50c50
+<             print("fixed_head lambda %s rowsum %.4f" % (self.lam, w_[min(100, T_ - 1)].sum().item()))
+---
+>             print("constant_head row_sum %.4f max_entry_row255 %.4f" % (w_[min(100, T_ - 1)].sum().item(), w_[min(255, T_ - 1)].max().item()))

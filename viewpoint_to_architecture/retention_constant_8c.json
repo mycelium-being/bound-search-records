@@ -1,0 +1,263 @@
+{
+ "config": {
+  "n_layer": 6,
+  "n_head": 6,
+  "n_embd": 384,
+  "dropout": 0.2,
+  "batch_size": 64,
+  "block_size": 256,
+  "learning_rate": 0.0001,
+  "max_iters": 5000,
+  "lr_decay_iters": 5000,
+  "min_lr": 0.0001,
+  "beta2": 0.99,
+  "warmup_iters": 0,
+  "eval_interval": 250,
+  "eval_iters": 200,
+  "dataset": "pg_char",
+  "compile": false,
+  "decay_lr": false,
+  "init_from": "resume"
+ },
+ "gpu": "NVIDIA GeForce RTX 3090",
+ "torch_version": "2.6.0+cu124",
+ "config_note": "row 8c checkpoints (out-constant-s<seed>, best-val iters 2000/2250/1750) resumed on pg_char for 2000+ iterations (max_iters=iter_num+2000; loop stops when iter_num>max_iters) at constant 1e-4; optimizer state restored from checkpoint; mlp_hidden 1600; same eval script (path patched to the nanoGPT_constant tree) before and after.",
+ "params": {
+  "trainable": 10745088,
+  "frozen": 0
+ },
+ "seeds": [
+  1337,
+  42,
+  7
+ ],
+ "second_text": {
+  "path": "corpus/pg/text/*.txt sorted, 11 files",
+  "chars": 291639,
+  "bytes": 291719,
+  "sha256_prefix": "492ed7fe962b7a22",
+  "kept_chars": 289971,
+  "dropped_chars": 1668,
+  "dropped_distinct": 21,
+  "dropped_set": "% ( ) * + / 0 1 2 4 5 6 7 8 9 = [ ] em-dash U+FFFD",
+  "train_tokens": 260973,
+  "val_tokens": 28998
+ },
+ "phase_a": {
+  "1337": {
+   "iter_num": 2000,
+   "best_val_loss": 1.469221830368042,
+   "model_args": {
+    "n_layer": 6,
+    "n_head": 6,
+    "n_embd": 384,
+    "block_size": 256,
+    "bias": false,
+    "vocab_size": 65,
+    "dropout": 0.2,
+    "mlp_hidden": 1600
+   },
+   "shakespeare_val_before": 1.4656
+  },
+  "42": {
+   "iter_num": 2250,
+   "best_val_loss": 1.4721869230270386,
+   "model_args": {
+    "n_layer": 6,
+    "n_head": 6,
+    "n_embd": 384,
+    "block_size": 256,
+    "bias": false,
+    "vocab_size": 65,
+    "dropout": 0.2,
+    "mlp_hidden": 1600
+   },
+   "shakespeare_val_before": 1.4689
+  },
+  "7": {
+   "iter_num": 1750,
+   "best_val_loss": 1.4652141332626343,
+   "model_args": {
+    "n_layer": 6,
+    "n_head": 6,
+    "n_embd": 384,
+    "block_size": 256,
+    "bias": false,
+    "vocab_size": 65,
+    "dropout": 0.2,
+    "mlp_hidden": 1600
+   },
+   "shakespeare_val_before": 1.465
+  }
+ },
+ "phase_b": {
+  "1337": {
+   "max_iters": 4000,
+   "learning_rate": 0.0001,
+   "curves": [
+    [
+     2000,
+     2.0017,
+     1.9815
+    ],
+    [
+     2250,
+     1.1191,
+     1.349
+    ],
+    [
+     2500,
+     0.995,
+     1.3267
+    ],
+    [
+     2750,
+     0.8998,
+     1.3369
+    ],
+    [
+     3000,
+     0.8195,
+     1.3615
+    ],
+    [
+     3250,
+     0.7436,
+     1.4005
+    ],
+    [
+     3500,
+     0.6736,
+     1.4391
+    ],
+    [
+     3750,
+     0.6043,
+     1.4849
+    ],
+    [
+     4000,
+     0.543,
+     1.5385
+    ]
+   ],
+   "pg_val_after": 1.5366,
+   "shakespeare_val_after": 2.6162,
+   "wall_seconds": 139.0
+  },
+  "42": {
+   "max_iters": 4250,
+   "learning_rate": 0.0001,
+   "curves": [
+    [
+     2250,
+     2.0347,
+     2.0215
+    ],
+    [
+     2500,
+     1.1072,
+     1.3384
+    ],
+    [
+     2750,
+     0.9786,
+     1.3219
+    ],
+    [
+     3000,
+     0.8827,
+     1.3362
+    ],
+    [
+     3250,
+     0.7987,
+     1.3671
+    ],
+    [
+     3500,
+     0.7236,
+     1.4035
+    ],
+    [
+     3750,
+     0.6509,
+     1.4466
+    ],
+    [
+     4000,
+     0.5848,
+     1.5004
+    ],
+    [
+     4250,
+     0.521,
+     1.5442
+    ]
+   ],
+   "pg_val_after": 1.5451,
+   "shakespeare_val_after": 2.5563,
+   "wall_seconds": 145.0
+  },
+  "7": {
+   "max_iters": 3750,
+   "learning_rate": 0.0001,
+   "curves": [
+    [
+     1750,
+     1.9843,
+     1.9598
+    ],
+    [
+     2000,
+     1.1258,
+     1.3495
+    ],
+    [
+     2250,
+     1.0047,
+     1.3298
+    ],
+    [
+     2500,
+     0.9156,
+     1.3444
+    ],
+    [
+     2750,
+     0.8346,
+     1.3616
+    ],
+    [
+     3000,
+     0.7642,
+     1.398
+    ],
+    [
+     3250,
+     0.6963,
+     1.4269
+    ],
+    [
+     3500,
+     0.6306,
+     1.4703
+    ],
+    [
+     3750,
+     0.5684,
+     1.5145
+    ]
+   ],
+   "pg_val_after": 1.5199,
+   "shakespeare_val_after": 2.5694,
+   "wall_seconds": 146.0
+  }
+ },
+ "eval_script": {
+  "block": 256,
+  "batch": 64,
+  "batches": 200,
+  "seed": 1337
+ }
+}
