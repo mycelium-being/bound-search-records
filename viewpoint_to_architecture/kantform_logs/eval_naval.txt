@@ -1,0 +1,18 @@
+before 1337 info D:\mycelium\vta\nanoGPT_naval\out-naval-s1337\ckpt.pt iter_num 1750 best_val_loss 1.4738160371780396 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+before 1337 eval D:\mycelium\vta\nanoGPT_naval\out-naval-s1337\ckpt.pt D:\mycelium\vta\nanoGPT_naval\data\shakespeare_char 1.4669
+after 1337 info D:\mycelium\vta\nanoGPT_naval\out-ret-naval-s1337\ckpt.pt iter_num 3750 best_val_loss 1.5077900886535645 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+after 1337 eval D:\mycelium\vta\nanoGPT_naval\out-ret-naval-s1337\ckpt.pt D:\mycelium\vta\nanoGPT_naval\data\shakespeare_char 2.5700
+essays 1337 info D:\mycelium\vta\nanoGPT_naval\out-ret-naval-s1337\ckpt.pt iter_num 3750 best_val_loss 1.5077900886535645 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+essays 1337 eval D:\mycelium\vta\nanoGPT_naval\out-ret-naval-s1337\ckpt.pt D:\mycelium\vta\nanoGPT_naval\data\pg_char 1.5111
+before 42 info D:\mycelium\vta\nanoGPT_naval\out-naval-s42\ckpt.pt iter_num 1750 best_val_loss 1.4630858898162842 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+before 42 eval D:\mycelium\vta\nanoGPT_naval\out-naval-s42\ckpt.pt D:\mycelium\vta\nanoGPT_naval\data\shakespeare_char 1.4612
+after 42 info D:\mycelium\vta\nanoGPT_naval\out-ret-naval-s42\ckpt.pt iter_num 3750 best_val_loss 1.4960535764694214 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+after 42 eval D:\mycelium\vta\nanoGPT_naval\out-ret-naval-s42\ckpt.pt D:\mycelium\vta\nanoGPT_naval\data\shakespeare_char 2.5602
+essays 42 info D:\mycelium\vta\nanoGPT_naval\out-ret-naval-s42\ckpt.pt iter_num 3750 best_val_loss 1.4960535764694214 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+essays 42 eval D:\mycelium\vta\nanoGPT_naval\out-ret-naval-s42\ckpt.pt D:\mycelium\vta\nanoGPT_naval\data\pg_char 1.5022
+before 7 info D:\mycelium\vta\nanoGPT_naval\out-naval-s7\ckpt.pt iter_num 1750 best_val_loss 1.4657235145568848 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+before 7 eval D:\mycelium\vta\nanoGPT_naval\out-naval-s7\ckpt.pt D:\mycelium\vta\nanoGPT_naval\data\shakespeare_char 1.4661
+after 7 info D:\mycelium\vta\nanoGPT_naval\out-ret-naval-s7\ckpt.pt iter_num 3750 best_val_loss 1.520124912261963 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+after 7 eval D:\mycelium\vta\nanoGPT_naval\out-ret-naval-s7\ckpt.pt D:\mycelium\vta\nanoGPT_naval\data\shakespeare_char 2.5741
+essays 7 info D:\mycelium\vta\nanoGPT_naval\out-ret-naval-s7\ckpt.pt iter_num 3750 best_val_loss 1.520124912261963 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+essays 7 eval D:\mycelium\vta\nanoGPT_naval\out-ret-naval-s7\ckpt.pt D:\mycelium\vta\nanoGPT_naval\data\pg_char 1.5213
