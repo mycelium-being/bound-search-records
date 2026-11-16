@@ -1,0 +1,107 @@
+D:\mycelium\vta\nanoGPT_kantform\train.py:215: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=(dtype == 'float16'))
+Overriding config with config\train_shakespeare_char.py:
+# train a miniature character-level shakespeare model
+# good for debugging and playing on macbooks and such
+
+out_dir = 'out-shakespeare-char'
+eval_interval = 250 # keep frequent because we'll overfit
+eval_iters = 200
+log_interval = 10 # don't print too too often
+
+# we expect to overfit on this small dataset, so only save when val improves
+always_save_checkpoint = False
+
+wandb_log = False # override via command line if you like
+wandb_project = 'shakespeare-char'
+wandb_run_name = 'mini-gpt'
+
+dataset = 'shakespeare_char'
+gradient_accumulation_steps = 1
+batch_size = 64
+block_size = 256 # context of up to 256 previous characters
+
+# baby GPT model :)
+n_layer = 6
+n_head = 6
+n_embd = 384
+dropout = 0.2
+
+learning_rate = 1e-3 # with baby networks can afford to go a bit higher
+max_iters = 5000
+lr_decay_iters = 5000 # make equal to max_iters usually
+min_lr = 1e-4 # learning_rate / 10 usually
+beta2 = 0.99 # make a bit bigger because number of tokens per iter is small
+
+warmup_iters = 100 # not super necessary potentially
+
+# on macbook also add
+# device = 'cpu'  # run on cpu only
+# compile = False # do not torch compile the model
+
+Overriding: compile = False
+Overriding: seed = 42
+Overriding: form_ckpt = D:\mycelium\vta\nanoGPT\out-form-s42\ckpt.pt
+Overriding: out_dir = out-kantform-s42
+Overriding: eval_interval = 250
+Overriding: log_interval = 250
+Overriding: always_save_checkpoint = False
+tokens per iteration will be: 16,384
+found vocab_size = 65 (inside data\shakespeare_char\meta.pkl)
+Initializing a new model from scratch
+number of parameters: 10.65M
+form_rows loaded layers=6 maxabs_diff_vs_ckpt 0.0
+num decayed parameter tensors: 26, with 10,740,096 parameters
+num non-decayed parameter tensors: 13, with 4,992 parameters
+using fused AdamW: True
+step 0: train loss 4.1657, val loss 4.1703
+iter 0: loss 4.1970, time 12348.58ms, mfu -100.00%
+step 250: train loss 1.9749, val loss 2.0718
+saving checkpoint to out-kantform-s42
+iter 250: loss 2.0188, time 14478.98ms, mfu 0.03%
+step 500: train loss 1.5289, val loss 1.7076
+saving checkpoint to out-kantform-s42
+iter 500: loss 1.5988, time 13965.18ms, mfu 0.03%
+step 750: train loss 1.3612, val loss 1.5722
+saving checkpoint to out-kantform-s42
+iter 750: loss 1.4360, time 14519.43ms, mfu 0.03%
+step 1000: train loss 1.2730, val loss 1.5113
+saving checkpoint to out-kantform-s42
+iter 1000: loss 1.3560, time 14601.56ms, mfu 0.03%
+step 1250: train loss 1.2056, val loss 1.4981
+saving checkpoint to out-kantform-s42
+iter 1250: loss 1.2930, time 10757.33ms, mfu 0.03%
+step 1500: train loss 1.1536, val loss 1.4885
+saving checkpoint to out-kantform-s42
+iter 1500: loss 1.2257, time 14170.79ms, mfu 0.03%
+step 1750: train loss 1.1071, val loss 1.4752
+saving checkpoint to out-kantform-s42
+iter 1750: loss 1.1713, time 14483.52ms, mfu 0.03%
+step 2000: train loss 1.0632, val loss 1.4793
+iter 2000: loss 1.1349, time 12651.02ms, mfu 0.03%
+step 2250: train loss 1.0155, val loss 1.4910
+iter 2250: loss 1.1143, time 12785.23ms, mfu 0.03%
+step 2500: train loss 0.9740, val loss 1.5119
+iter 2500: loss 1.0810, time 12657.43ms, mfu 0.03%
+step 2750: train loss 0.9212, val loss 1.5068
+iter 2750: loss 1.0418, time 12525.30ms, mfu 0.03%
+step 3000: train loss 0.8785, val loss 1.5320
+iter 3000: loss 0.9683, time 12761.51ms, mfu 0.03%
+step 3250: train loss 0.8360, val loss 1.5555
+iter 3250: loss 0.9884, time 12684.57ms, mfu 0.03%
+step 3500: train loss 0.7923, val loss 1.5832
+iter 3500: loss 0.9648, time 12674.79ms, mfu 0.03%
+step 3750: train loss 0.7561, val loss 1.6001
+iter 3750: loss 0.9074, time 12607.60ms, mfu 0.03%
+step 4000: train loss 0.7275, val loss 1.6194
+iter 4000: loss 0.8731, time 12564.67ms, mfu 0.03%
+step 4250: train loss 0.6976, val loss 1.6419
+iter 4250: loss 0.8499, time 12722.21ms, mfu 0.03%
+step 4500: train loss 0.6741, val loss 1.6542
+iter 4500: loss 0.8467, time 12501.37ms, mfu 0.03%
+step 4750: train loss 0.6544, val loss 1.6771
+iter 4750: loss 0.8405, time 12724.36ms, mfu 0.03%
+step 5000: train loss 0.6393, val loss 1.6916
+iter 5000: loss 0.8093, time 12847.22ms, mfu 0.03%
+frozen_rows equal True maxabs 0.0
+trainable parameters 10745088
