@@ -1,0 +1,238 @@
+{
+ "gpu": "NVIDIA GeForce RTX 3090",
+ "torch_version": "2.6.0+cu124",
+ "eval_script": {
+  "block": 256,
+  "batch": 64,
+  "batches": 200,
+  "seed": 1337
+ },
+ "second_text": {
+  "path": "corpus/pg/text/*.txt sorted, 11 files",
+  "chars": 291639,
+  "bytes": 291719,
+  "sha256_prefix": "492ed7fe962b7a22",
+  "kept_chars": 289971,
+  "dropped_chars": 1668,
+  "dropped_distinct": 21,
+  "dropped_set": "% ( ) * + / 0 1 2 4 5 6 7 8 9 = [ ] em-dash U+FFFD",
+  "train_tokens": 260973,
+  "val_tokens": 28998
+ },
+ "config": {
+  "n_layer": 6,
+  "n_head": 6,
+  "n_embd": 384,
+  "dropout": 0.2,
+  "batch_size": 64,
+  "block_size": 256,
+  "learning_rate": 0.0001,
+  "max_iters": 5000,
+  "lr_decay_iters": 5000,
+  "min_lr": 0.0001,
+  "beta2": 0.99,
+  "warmup_iters": 0,
+  "eval_interval": 250,
+  "eval_iters": 200,
+  "dataset": "pg_char",
+  "compile": false,
+  "decay_lr": false,
+  "init_from": "resume"
+ },
+ "config_note": "row 10 checkpoints (out-kantform-s<seed>, best-val iters 1500/1750/1750) resumed on pg_char for 2000+ iterations (max_iters=iter_num+2000; loop stops when iter_num>max_iters) at constant 1e-4; optimizer state restored; head 0 q/k rows of every layer held frozen as in training (--form_ckpt also passed; load print form_rows maxabs 0.0, frozen_rows equal True after phase B on all seeds); eval_ckpt.py path-patched to nanoGPT_kantform; wall_seconds are file-time differences with other jobs sharing the card (not comparable across rows).",
+ "params": {
+  "trainable": 10745088,
+  "frozen": 0
+ },
+ "seeds": [
+  1337,
+  42,
+  7
+ ],
+ "phase_a": {
+  "1337": {
+   "iter_num": 1500,
+   "best_val_loss": 1.4786895513534546,
+   "shakespeare_val_before": 1.474
+  },
+  "42": {
+   "iter_num": 1750,
+   "best_val_loss": 1.4751590490341187,
+   "shakespeare_val_before": 1.4739
+  },
+  "7": {
+   "iter_num": 1750,
+   "best_val_loss": 1.4552441835403442,
+   "shakespeare_val_before": 1.4555
+  }
+ },
+ "phase_b": {
+  "1337": {
+   "max_iters": 3500,
+   "learning_rate": 0.0001,
+   "curves": [
+    [
+     1500,
+     2.0048,
+     1.9711
+    ],
+    [
+     1750,
+     1.1357,
+     1.3467
+    ],
+    [
+     2000,
+     1.019,
+     1.3281
+    ],
+    [
+     2250,
+     0.9347,
+     1.3336
+    ],
+    [
+     2500,
+     0.8582,
+     1.355
+    ],
+    [
+     2750,
+     0.785,
+     1.3803
+    ],
+    [
+     3000,
+     0.7182,
+     1.4125
+    ],
+    [
+     3250,
+     0.6532,
+     1.4515
+    ],
+    [
+     3500,
+     0.5916,
+     1.4991
+    ]
+   ],
+   "pg_val_after": 1.503,
+   "shakespeare_val_after": 2.5494,
+   "wall_seconds": 876.6
+  },
+  "42": {
+   "max_iters": 3750,
+   "learning_rate": 0.0001,
+   "curves": [
+    [
+     1750,
+     2.0141,
+     1.9756
+    ],
+    [
+     2000,
+     1.1245,
+     1.339
+    ],
+    [
+     2250,
+     1.0024,
+     1.3244
+    ],
+    [
+     2500,
+     0.9091,
+     1.3332
+    ],
+    [
+     2750,
+     0.8301,
+     1.3467
+    ],
+    [
+     3000,
+     0.7573,
+     1.3828
+    ],
+    [
+     3250,
+     0.6841,
+     1.419
+    ],
+    [
+     3500,
+     0.6173,
+     1.4518
+    ],
+    [
+     3750,
+     0.5554,
+     1.4986
+    ]
+   ],
+   "pg_val_after": 1.5028,
+   "shakespeare_val_after": 2.5958,
+   "wall_seconds": 735.0
+  },
+  "7": {
+   "max_iters": 3750,
+   "learning_rate": 0.0001,
+   "curves": [
+    [
+     1750,
+     2.003,
+     1.9752
+    ],
+    [
+     2000,
+     1.1219,
+     1.3309
+    ],
+    [
+     2250,
+     1.0009,
+     1.3193
+    ],
+    [
+     2500,
+     0.9101,
+     1.3317
+    ],
+    [
+     2750,
+     0.8299,
+     1.3533
+    ],
+    [
+     3000,
+     0.7533,
+     1.3911
+    ],
+    [
+     3250,
+     0.684,
+     1.4224
+    ],
+    [
+     3500,
+     0.6189,
+     1.4581
+    ],
+    [
+     3750,
+     0.5554,
+     1.5127
+    ]
+   ],
+   "pg_val_after": 1.5139,
+   "shakespeare_val_after": 2.5394,
+   "wall_seconds": 479.0
+  }
+ },
+ "rise": {
+  "1337": 1.0754,
+  "42": 1.1219,
+  "7": 1.0839
+ }
+}
