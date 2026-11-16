@@ -1,0 +1,89 @@
+D:\mycelium\vta\nanoGPT_retention\train.py:197: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=(dtype == 'float16'))
+Overriding config with config\train_shakespeare_char.py:
+# train a miniature character-level shakespeare model
+# good for debugging and playing on macbooks and such
+
+out_dir = 'out-shakespeare-char'
+eval_interval = 250 # keep frequent because we'll overfit
+eval_iters = 200
+log_interval = 10 # don't print too too often
+
+# we expect to overfit on this small dataset, so only save when val improves
+always_save_checkpoint = False
+
+wandb_log = False # override via command line if you like
+wandb_project = 'shakespeare-char'
+wandb_run_name = 'mini-gpt'
+
+dataset = 'shakespeare_char'
+gradient_accumulation_steps = 1
+batch_size = 64
+block_size = 256 # context of up to 256 previous characters
+
+# baby GPT model :)
+n_layer = 6
+n_head = 6
+n_embd = 384
+dropout = 0.2
+
+learning_rate = 1e-3 # with baby networks can afford to go a bit higher
+max_iters = 5000
+lr_decay_iters = 5000 # make equal to max_iters usually
+min_lr = 1e-4 # learning_rate / 10 usually
+beta2 = 0.99 # make a bit bigger because number of tokens per iter is small
+
+warmup_iters = 100 # not super necessary potentially
+
+# on macbook also add
+# device = 'cpu'  # run on cpu only
+# compile = False # do not torch compile the model
+
+Overriding: compile = False
+Overriding: seed = 1337
+Overriding: init_from = resume
+Overriding: out_dir = out-ret-s1337
+Overriding: dataset = pg_char
+Overriding: max_iters = 3750
+Overriding: lr_decay_iters = 3750
+Overriding: decay_lr = False
+Overriding: learning_rate = 0.0001
+Overriding: warmup_iters = 0
+Overriding: eval_interval = 250
+Overriding: log_interval = 250
+Overriding: eval_iters = 200
+Overriding: always_save_checkpoint = True
+tokens per iteration will be: 16,384
+found vocab_size = 65 (inside data\pg_char\meta.pkl)
+Resuming training from out-ret-s1337
+number of parameters: 10.65M
+num decayed parameter tensors: 26, with 10,740,096 parameters
+num non-decayed parameter tensors: 13, with 4,992 parameters
+using fused AdamW: True
+step 1750: train loss 1.9747, val loss 1.9546
+saving checkpoint to out-ret-s1337
+iter 1750: loss 1.9721, time 6799.54ms, mfu -100.00%
+step 2000: train loss 1.1212, val loss 1.3421
+saving checkpoint to out-ret-s1337
+iter 2000: loss 1.1706, time 6574.71ms, mfu 0.06%
+step 2250: train loss 0.9968, val loss 1.3240
+saving checkpoint to out-ret-s1337
+iter 2250: loss 1.0796, time 6646.99ms, mfu 0.06%
+step 2500: train loss 0.9046, val loss 1.3377
+saving checkpoint to out-ret-s1337
+iter 2500: loss 1.0215, time 6142.83ms, mfu 0.06%
+step 2750: train loss 0.8224, val loss 1.3633
+saving checkpoint to out-ret-s1337
+iter 2750: loss 0.9594, time 6344.14ms, mfu 0.06%
+step 3000: train loss 0.7463, val loss 1.3936
+saving checkpoint to out-ret-s1337
+iter 3000: loss 0.8905, time 6402.63ms, mfu 0.06%
+step 3250: train loss 0.6748, val loss 1.4315
+saving checkpoint to out-ret-s1337
+iter 3250: loss 0.8434, time 7276.81ms, mfu 0.06%
+step 3500: train loss 0.6061, val loss 1.4814
+saving checkpoint to out-ret-s1337
+iter 3500: loss 0.7963, time 6657.80ms, mfu 0.06%
+step 3750: train loss 0.5377, val loss 1.5368
+saving checkpoint to out-ret-s1337
+iter 3750: loss 0.7442, time 6759.58ms, mfu 0.06%

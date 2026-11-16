@@ -1,0 +1,260 @@
+{
+ "config": {
+  "n_layer": 6,
+  "n_head": 6,
+  "n_embd": 384,
+  "dropout": 0.2,
+  "batch_size": 64,
+  "block_size": 256,
+  "learning_rate": 0.0001,
+  "max_iters": 5000,
+  "lr_decay_iters": 5000,
+  "min_lr": 0.0001,
+  "beta2": 0.99,
+  "warmup_iters": 0,
+  "eval_interval": 250,
+  "eval_iters": 200,
+  "dataset": "pg_char",
+  "compile": false,
+  "decay_lr": false,
+  "init_from": "resume"
+ },
+ "gpu": "NVIDIA GeForce RTX 3090",
+ "torch_version": "2.6.0+cu124",
+ "config_note": "stock checkpoints (out-s<seed>, iter 1750) resumed on pg_char for 2001 iterations (max_iters=iter_num+2000; loop stops when iter_num>max_iters) at constant 1e-4; optimizer state restored from checkpoint; same eval script before and after.",
+ "params": {
+  "trainable": 10745088,
+  "frozen": 0
+ },
+ "seeds": [
+  1337,
+  42,
+  7
+ ],
+ "second_text": {
+  "path": "corpus/pg/text/*.txt sorted, 11 files",
+  "chars": 291639,
+  "bytes": 291719,
+  "sha256_prefix": "492ed7fe962b7a22",
+  "kept_chars": 289971,
+  "dropped_chars": 1668,
+  "dropped_distinct": 21,
+  "dropped_set": "% ( ) * + / 0 1 2 4 5 6 7 8 9 = [ ] em-dash U+FFFD",
+  "train_tokens": 260973,
+  "val_tokens": 28998
+ },
+ "phase_a": {
+  "1337": {
+   "iter_num": 1750,
+   "best_val_loss": 1.4664463996887207,
+   "model_args": {
+    "n_layer": 6,
+    "n_head": 6,
+    "n_embd": 384,
+    "block_size": 256,
+    "bias": false,
+    "vocab_size": 65,
+    "dropout": 0.2
+   },
+   "shakespeare_val_before": 1.4599
+  },
+  "42": {
+   "iter_num": 1750,
+   "best_val_loss": 1.4669090509414673,
+   "model_args": {
+    "n_layer": 6,
+    "n_head": 6,
+    "n_embd": 384,
+    "block_size": 256,
+    "bias": false,
+    "vocab_size": 65,
+    "dropout": 0.2
+   },
+   "shakespeare_val_before": 1.4658
+  },
+  "7": {
+   "iter_num": 1750,
+   "best_val_loss": 1.4532333612442017,
+   "model_args": {
+    "n_layer": 6,
+    "n_head": 6,
+    "n_embd": 384,
+    "block_size": 256,
+    "bias": false,
+    "vocab_size": 65,
+    "dropout": 0.2
+   },
+   "shakespeare_val_before": 1.4532
+  }
+ },
+ "phase_b": {
+  "1337": {
+   "max_iters": 3750,
+   "learning_rate": 0.0001,
+   "curves": [
+    [
+     1750,
+     1.9747,
+     1.9546
+    ],
+    [
+     2000,
+     1.1212,
+     1.3421
+    ],
+    [
+     2250,
+     0.9968,
+     1.324
+    ],
+    [
+     2500,
+     0.9046,
+     1.3377
+    ],
+    [
+     2750,
+     0.8224,
+     1.3633
+    ],
+    [
+     3000,
+     0.7463,
+     1.3936
+    ],
+    [
+     3250,
+     0.6748,
+     1.4315
+    ],
+    [
+     3500,
+     0.6061,
+     1.4814
+    ],
+    [
+     3750,
+     0.5377,
+     1.5368
+    ]
+   ],
+   "pg_val_after": 1.5403,
+   "shakespeare_val_after": 2.6045,
+   "wall_seconds": 133.6
+  },
+  "42": {
+   "max_iters": 3750,
+   "learning_rate": 0.0001,
+   "curves": [
+    [
+     1750,
+     1.992,
+     1.9587
+    ],
+    [
+     2000,
+     1.1223,
+     1.3418
+    ],
+    [
+     2250,
+     0.9964,
+     1.3241
+    ],
+    [
+     2500,
+     0.9022,
+     1.3405
+    ],
+    [
+     2750,
+     0.8186,
+     1.3577
+    ],
+    [
+     3000,
+     0.7411,
+     1.3927
+    ],
+    [
+     3250,
+     0.6672,
+     1.4312
+    ],
+    [
+     3500,
+     0.5963,
+     1.4689
+    ],
+    [
+     3750,
+     0.5299,
+     1.5216
+    ]
+   ],
+   "pg_val_after": 1.5268,
+   "shakespeare_val_after": 2.5859,
+   "wall_seconds": 134.6
+  },
+  "7": {
+   "max_iters": 3750,
+   "learning_rate": 0.0001,
+   "curves": [
+    [
+     1750,
+     1.98,
+     1.9606
+    ],
+    [
+     2000,
+     1.1185,
+     1.3398
+    ],
+    [
+     2250,
+     0.9945,
+     1.3222
+    ],
+    [
+     2500,
+     0.9022,
+     1.3457
+    ],
+    [
+     2750,
+     0.8162,
+     1.3672
+    ],
+    [
+     3000,
+     0.7369,
+     1.4019
+    ],
+    [
+     3250,
+     0.6635,
+     1.4471
+    ],
+    [
+     3500,
+     0.5937,
+     1.4819
+    ],
+    [
+     3750,
+     0.5263,
+     1.536
+    ]
+   ],
+   "pg_val_after": 1.5381,
+   "shakespeare_val_after": 2.5876,
+   "wall_seconds": 134.2
+  }
+ },
+ "eval_script": {
+  "block": 256,
+  "batch": 64,
+  "batches": 200,
+  "seed": 1337
+ }
+}
