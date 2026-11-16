@@ -1,0 +1,105 @@
+D:\mycelium\vta\nanoGPT_naval\train.py:197: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=(dtype == 'float16'))
+Overriding config with config\train_shakespeare_char.py:
+# train a miniature character-level shakespeare model
+# good for debugging and playing on macbooks and such
+
+out_dir = 'out-shakespeare-char'
+eval_interval = 250 # keep frequent because we'll overfit
+eval_iters = 200
+log_interval = 10 # don't print too too often
+
+# we expect to overfit on this small dataset, so only save when val improves
+always_save_checkpoint = False
+
+wandb_log = False # override via command line if you like
+wandb_project = 'shakespeare-char'
+wandb_run_name = 'mini-gpt'
+
+dataset = 'shakespeare_char'
+gradient_accumulation_steps = 1
+batch_size = 64
+block_size = 256 # context of up to 256 previous characters
+
+# baby GPT model :)
+n_layer = 6
+n_head = 6
+n_embd = 384
+dropout = 0.2
+
+learning_rate = 1e-3 # with baby networks can afford to go a bit higher
+max_iters = 5000
+lr_decay_iters = 5000 # make equal to max_iters usually
+min_lr = 1e-4 # learning_rate / 10 usually
+beta2 = 0.99 # make a bit bigger because number of tokens per iter is small
+
+warmup_iters = 100 # not super necessary potentially
+
+# on macbook also add
+# device = 'cpu'  # run on cpu only
+# compile = False # do not torch compile the model
+
+Overriding: compile = False
+Overriding: seed = 7
+Overriding: out_dir = out-naval-s7
+Overriding: eval_interval = 250
+Overriding: log_interval = 250
+Overriding: always_save_checkpoint = False
+tokens per iteration will be: 16,384
+found vocab_size = 65 (inside data\shakespeare_char\meta.pkl)
+Initializing a new model from scratch
+number of parameters: 10.65M
+num decayed parameter tensors: 26, with 10,740,096 parameters
+num non-decayed parameter tensors: 13, with 4,992 parameters
+using fused AdamW: True
+step 0: train loss 4.1631, val loss 4.1636
+iter 0: loss 4.1807, time 12667.53ms, mfu -100.00%
+step 250: train loss 1.9526, val loss 2.0612
+saving checkpoint to out-naval-s7
+iter 250: loss 2.0528, time 14086.11ms, mfu 0.03%
+step 500: train loss 1.5194, val loss 1.7077
+saving checkpoint to out-naval-s7
+iter 500: loss 1.6130, time 13188.82ms, mfu 0.03%
+step 750: train loss 1.3613, val loss 1.5691
+saving checkpoint to out-naval-s7
+iter 750: loss 1.4344, time 14244.20ms, mfu 0.03%
+step 1000: train loss 1.2662, val loss 1.5130
+saving checkpoint to out-naval-s7
+iter 1000: loss 1.3682, time 13431.01ms, mfu 0.03%
+step 1250: train loss 1.2095, val loss 1.4980
+saving checkpoint to out-naval-s7
+iter 1250: loss 1.3073, time 14400.45ms, mfu 0.03%
+step 1500: train loss 1.1516, val loss 1.4697
+saving checkpoint to out-naval-s7
+iter 1500: loss 1.2283, time 14485.53ms, mfu 0.03%
+step 1750: train loss 1.1064, val loss 1.4657
+saving checkpoint to out-naval-s7
+iter 1750: loss 1.2070, time 14523.65ms, mfu 0.03%
+step 2000: train loss 1.0587, val loss 1.4800
+iter 2000: loss 1.1780, time 10793.03ms, mfu 0.03%
+step 2250: train loss 1.0184, val loss 1.4805
+iter 2250: loss 1.1345, time 11879.00ms, mfu 0.03%
+step 2500: train loss 0.9709, val loss 1.4982
+iter 2500: loss 1.0859, time 13773.21ms, mfu 0.03%
+step 2750: train loss 0.9235, val loss 1.5134
+iter 2750: loss 1.0404, time 11997.58ms, mfu 0.03%
+step 3000: train loss 0.8790, val loss 1.5309
+iter 3000: loss 0.9972, time 11931.59ms, mfu 0.03%
+step 3250: train loss 0.8367, val loss 1.5559
+iter 3250: loss 0.9532, time 12198.87ms, mfu 0.03%
+step 3500: train loss 0.7979, val loss 1.5756
+iter 3500: loss 0.9508, time 11703.76ms, mfu 0.03%
+step 3750: train loss 0.7577, val loss 1.6017
+iter 3750: loss 0.9165, time 11469.20ms, mfu 0.03%
+step 4000: train loss 0.7276, val loss 1.6147
+iter 4000: loss 0.8683, time 11772.40ms, mfu 0.03%
+step 4250: train loss 0.7011, val loss 1.6327
+iter 4250: loss 0.8701, time 11535.44ms, mfu 0.03%
+step 4500: train loss 0.6777, val loss 1.6546
+iter 4500: loss 0.8591, time 11665.61ms, mfu 0.03%
+step 4750: train loss 0.6595, val loss 1.6717
+iter 4750: loss 0.8599, time 11510.96ms, mfu 0.03%
+step 5000: train loss 0.6469, val loss 1.6815
+iter 5000: loss 0.8555, time 11453.33ms, mfu 0.03%
+frozen_rows equal True maxabs 0.0
+trainable parameters 10745088
