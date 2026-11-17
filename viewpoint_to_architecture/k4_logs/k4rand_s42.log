@@ -1,0 +1,115 @@
+D:\mycelium\vta\nanoGPT_k4\train.py:242: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=(dtype == 'float16'))
+Overriding config with config\train_shakespeare_char.py:
+# train a miniature character-level shakespeare model
+# good for debugging and playing on macbooks and such
+
+out_dir = 'out-shakespeare-char'
+eval_interval = 250 # keep frequent because we'll overfit
+eval_iters = 200
+log_interval = 10 # don't print too too often
+
+# we expect to overfit on this small dataset, so only save when val improves
+always_save_checkpoint = False
+
+wandb_log = False # override via command line if you like
+wandb_project = 'shakespeare-char'
+wandb_run_name = 'mini-gpt'
+
+dataset = 'shakespeare_char'
+gradient_accumulation_steps = 1
+batch_size = 64
+block_size = 256 # context of up to 256 previous characters
+
+# baby GPT model :)
+n_layer = 6
+n_head = 6
+n_embd = 384
+dropout = 0.2
+
+learning_rate = 1e-3 # with baby networks can afford to go a bit higher
+max_iters = 5000
+lr_decay_iters = 5000 # make equal to max_iters usually
+min_lr = 1e-4 # learning_rate / 10 usually
+beta2 = 0.99 # make a bit bigger because number of tokens per iter is small
+
+warmup_iters = 100 # not super necessary potentially
+
+# on macbook also add
+# device = 'cpu'  # run on cpu only
+# compile = False # do not torch compile the model
+
+Overriding: compile = False
+Overriding: seed = 42
+Overriding: form_heads = all
+Overriding: out_dir = out-k4rand-s42
+Overriding: eval_interval = 250
+Overriding: log_interval = 250
+Overriding: always_save_checkpoint = False
+tokens per iteration will be: 16,384
+found vocab_size = 65 (inside data\shakespeare_char\meta.pkl)
+Initializing a new model from scratch
+number of parameters: 10.65M
+form_rows frozen_at_random_init layers=6 heads=6 (no form_ckpt)
+num decayed parameter tensors: 26, with 10,740,096 parameters
+num non-decayed parameter tensors: 13, with 4,992 parameters
+using fused AdamW: True
+step 0: train loss 4.1647, val loss 4.1691
+iter 0: loss 4.1951, time 17209.05ms, mfu -100.00%
+step 250: train loss 2.3554, val loss 2.3856
+saving checkpoint to out-k4rand-s42
+iter 250: loss 2.3841, time 19706.79ms, mfu 0.02%
+step 500: train loss 2.2200, val loss 2.2832
+saving checkpoint to out-k4rand-s42
+iter 500: loss 2.2891, time 19878.31ms, mfu 0.02%
+step 750: train loss 2.0202, val loss 2.1303
+saving checkpoint to out-k4rand-s42
+iter 750: loss 2.1307, time 20098.24ms, mfu 0.02%
+step 1000: train loss 1.7303, val loss 1.8789
+saving checkpoint to out-k4rand-s42
+iter 1000: loss 1.8503, time 19596.53ms, mfu 0.02%
+step 1250: train loss 1.5774, val loss 1.7666
+saving checkpoint to out-k4rand-s42
+iter 1250: loss 1.7074, time 19935.81ms, mfu 0.02%
+step 1500: train loss 1.4855, val loss 1.6942
+saving checkpoint to out-k4rand-s42
+iter 1500: loss 1.5740, time 19302.23ms, mfu 0.02%
+step 1750: train loss 1.4158, val loss 1.6337
+saving checkpoint to out-k4rand-s42
+iter 1750: loss 1.4878, time 19504.90ms, mfu 0.02%
+step 2000: train loss 1.3588, val loss 1.5975
+saving checkpoint to out-k4rand-s42
+iter 2000: loss 1.4506, time 19601.80ms, mfu 0.02%
+step 2250: train loss 1.3083, val loss 1.5652
+saving checkpoint to out-k4rand-s42
+iter 2250: loss 1.4121, time 20119.76ms, mfu 0.02%
+step 2500: train loss 1.2688, val loss 1.5524
+saving checkpoint to out-k4rand-s42
+iter 2500: loss 1.3716, time 19351.84ms, mfu 0.02%
+step 2750: train loss 1.2285, val loss 1.5250
+saving checkpoint to out-k4rand-s42
+iter 2750: loss 1.3353, time 19736.26ms, mfu 0.02%
+step 3000: train loss 1.1991, val loss 1.5190
+saving checkpoint to out-k4rand-s42
+iter 3000: loss 1.2620, time 24944.93ms, mfu 0.02%
+step 3250: train loss 1.1719, val loss 1.5111
+saving checkpoint to out-k4rand-s42
+iter 3250: loss 1.2704, time 24855.35ms, mfu 0.02%
+step 3500: train loss 1.1412, val loss 1.5145
+iter 3500: loss 1.2660, time 23869.78ms, mfu 0.02%
+step 3750: train loss 1.1194, val loss 1.5070
+saving checkpoint to out-k4rand-s42
+iter 3750: loss 1.2087, time 25390.67ms, mfu 0.02%
+step 4000: train loss 1.0999, val loss 1.5041
+saving checkpoint to out-k4rand-s42
+iter 4000: loss 1.1976, time 25688.97ms, mfu 0.02%
+step 4250: train loss 1.0839, val loss 1.5198
+iter 4250: loss 1.1638, time 23861.77ms, mfu 0.02%
+step 4500: train loss 1.0656, val loss 1.5072
+iter 4500: loss 1.1709, time 23676.72ms, mfu 0.02%
+step 4750: train loss 1.0520, val loss 1.5115
+iter 4750: loss 1.1549, time 23486.70ms, mfu 0.02%
+step 5000: train loss 1.0406, val loss 1.5217
+iter 5000: loss 1.1344, time 22190.29ms, mfu 0.02%
+frozen_rows equal True maxabs 0.0
+trainable parameters 10745088
