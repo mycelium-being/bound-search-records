@@ -1,0 +1,78 @@
+D:\mycelium\vta\nanoGPT\train.py:197: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=(dtype == 'float16'))
+Overriding config with config\train_shakespeare_char.py:
+# train a miniature character-level shakespeare model
+# good for debugging and playing on macbooks and such
+
+out_dir = 'out-shakespeare-char'
+eval_interval = 250 # keep frequent because we'll overfit
+eval_iters = 200
+log_interval = 10 # don't print too too often
+
+# we expect to overfit on this small dataset, so only save when val improves
+always_save_checkpoint = False
+
+wandb_log = False # override via command line if you like
+wandb_project = 'shakespeare-char'
+wandb_run_name = 'mini-gpt'
+
+dataset = 'shakespeare_char'
+gradient_accumulation_steps = 1
+batch_size = 64
+block_size = 256 # context of up to 256 previous characters
+
+# baby GPT model :)
+n_layer = 6
+n_head = 6
+n_embd = 384
+dropout = 0.2
+
+learning_rate = 1e-3 # with baby networks can afford to go a bit higher
+max_iters = 5000
+lr_decay_iters = 5000 # make equal to max_iters usually
+min_lr = 1e-4 # learning_rate / 10 usually
+beta2 = 0.99 # make a bit bigger because number of tokens per iter is small
+
+warmup_iters = 100 # not super necessary potentially
+
+# on macbook also add
+# device = 'cpu'  # run on cpu only
+# compile = False # do not torch compile the model
+
+Overriding: compile = False
+Overriding: seed = 42
+Overriding: dataset = form2_char
+Overriding: max_iters = 1500
+Overriding: lr_decay_iters = 1500
+Overriding: eval_interval = 250
+Overriding: eval_iters = 50
+Overriding: log_interval = 250
+Overriding: out_dir = out-form2-s42
+Overriding: always_save_checkpoint = True
+tokens per iteration will be: 16,384
+found vocab_size = 65 (inside data\form2_char\meta.pkl)
+Initializing a new model from scratch
+number of parameters: 10.65M
+num decayed parameter tensors: 26, with 10,740,096 parameters
+num non-decayed parameter tensors: 13, with 4,992 parameters
+using fused AdamW: True
+step 0: train loss 4.2684, val loss 4.2720
+iter 0: loss 4.2631, time 1499.22ms, mfu -100.00%
+step 250: train loss 4.1719, val loss 4.1733
+saving checkpoint to out-form2-s42
+iter 250: loss 4.1721, time 2702.23ms, mfu 0.14%
+step 500: train loss 4.1460, val loss 4.1503
+saving checkpoint to out-form2-s42
+iter 500: loss 4.1509, time 2699.09ms, mfu 0.14%
+step 750: train loss 4.1335, val loss 4.1395
+saving checkpoint to out-form2-s42
+iter 750: loss 4.1421, time 3344.90ms, mfu 0.14%
+step 1000: train loss 4.1252, val loss 4.1334
+saving checkpoint to out-form2-s42
+iter 1000: loss 4.1358, time 2784.28ms, mfu 0.14%
+step 1250: train loss 4.1196, val loss 4.1300
+saving checkpoint to out-form2-s42
+iter 1250: loss 4.1240, time 2633.73ms, mfu 0.14%
+step 1500: train loss 4.1157, val loss 4.1267
+saving checkpoint to out-form2-s42
+iter 1500: loss 4.1248, time 2691.74ms, mfu 0.14%
