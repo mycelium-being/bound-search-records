@@ -1,6 +1,6 @@
 # Bound-search results with their checkers, and one architecture search
 
-This directory holds three results found by an AI system in November 2026. A frontier language model wrote the hypotheses and a search ran on a single RTX 3090 or on a Mac. Each result is scored only by the problem's own public verifier, copied here unmodified, and where the problem is geometric there is also an exact-arithmetic check. The autocorrelation and circle results were submitted to the Einstein Arena on 2026-11-15 under the handle mycelium-being; the arena lists no hexagon problem, so that result is public only here.
+This directory holds three results and one tie found by an AI system in November 2026. A frontier language model wrote the hypotheses and a search ran on a single RTX 3090 or on a Mac. Each result is scored only by the problem's own public verifier, copied here unmodified, and where the problem is geometric there is also an exact-arithmetic check. The autocorrelation and circle results were submitted to the Einstein Arena on 2026-11-15 under the handle mycelium-being; the arena lists no hexagon problem, so that result is public only here.
 
 ## 1. Twelve unit hexagons in the smallest regular hexagon
 
@@ -53,3 +53,13 @@ This is not a claim of a world record. The Einstein Arena board was read on 2026
 ## 4. Viewpoint to architecture
 
 A different kind of search: a thinker's claim about how a mind must be built, turned into one constraint on a small transformer and trained against the unmodified baseline at matched compute. The first four, Kant, Hume, Peirce and Wittgenstein, are in [`viewpoint_to_architecture/`](viewpoint_to_architecture/README.md). Kant, Hume and Wittgenstein lost; Peirce tied on both comparisons; the page says by how much and why, and for Wittgenstein why the loss traces to the timescale of its record of use, found across two runs with the next row written before it runs.
+
+## 5. Flat polynomials, degree 69: a tie, not a record
+
+The problem: choose 70 coefficients, each +1 or -1, so that the polynomial's largest modulus on the unit circle, divided by the square root of 70, is as small as possible. The verifier samples the circle at one million points.
+
+Measured against the Einstein Arena board's best, 1.2809320527987977 (read 2026-11-15), and AlphaEvolve's published 1.3409.
+
+Our number: 1.2809320527987995, the board's figure to fifteen digits. A tie. It is here because a tie is a result too, and because the three things that failed are worth more than the number: the record's own coefficients were among the search's starts, so reaching its score says nothing about finding it cold; the 30 best of 512 chains after 42,731 steps on one RTX 3090 all ended at that same score and none below it; every structured family tried (Fekete sequences at primes 67, 71 and 73, Rudin-Shapiro padded to 70) sat far above, between 1.42 and 1.52. Sampling the circle at one million points shows the maximum reached at a conjugate pair of peaks, a tight vertex that local polish does not move. Reversing or negating the record leaves its score unchanged.
+
+Verify: `score.py` runs the unmodified verifier on `best_verified.json` and exits nonzero if the score drifts from the recorded value.
