@@ -1,0 +1,36 @@
+info out-k4rand-s1337\ckpt.pt iter_num 4000 best_val_loss 1.4970703125 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+number of parameters: 10.65M
+eval out-k4rand-s1337\ckpt.pt data\shakespeare_char 1.4941
+number of parameters: 10.65M
+eval out-k4rand-s1337\ckpt.pt data\shakespeare_char 1.4941
+info out-ret-k4rand-s1337\ckpt.pt iter_num 6000 best_val_loss 1.4323549270629883 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+number of parameters: 10.65M
+eval out-ret-k4rand-s1337\ckpt.pt data\shakespeare_char 2.4297
+number of parameters: 10.65M
+eval out-ret-k4rand-s1337\ckpt.pt data\shakespeare_char 2.4297
+number of parameters: 10.65M
+eval out-ret-k4rand-s1337\ckpt.pt data\pg_char 1.4346
+info out-k4rand-s42\ckpt.pt iter_num 4000 best_val_loss 1.5041377544403076 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+number of parameters: 10.65M
+eval out-k4rand-s42\ckpt.pt data\shakespeare_char 1.5045
+number of parameters: 10.65M
+eval out-k4rand-s42\ckpt.pt data\shakespeare_char 1.5045
+info out-ret-k4rand-s42\ckpt.pt iter_num 6000 best_val_loss 1.4450793266296387 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+number of parameters: 10.65M
+eval out-ret-k4rand-s42\ckpt.pt data\shakespeare_char 2.4497
+number of parameters: 10.65M
+eval out-ret-k4rand-s42\ckpt.pt data\shakespeare_char 2.4497
+number of parameters: 10.65M
+eval out-ret-k4rand-s42\ckpt.pt data\pg_char 1.4496
+info out-k4rand-s7\ckpt.pt iter_num 4250 best_val_loss 1.4971562623977661 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+number of parameters: 10.65M
+eval out-k4rand-s7\ckpt.pt data\shakespeare_char 1.4948
+number of parameters: 10.65M
+eval out-k4rand-s7\ckpt.pt data\shakespeare_char 1.4948
+info out-ret-k4rand-s7\ckpt.pt iter_num 6000 best_val_loss 1.4037567377090454 model_args {'n_layer': 6, 'n_head': 6, 'n_embd': 384, 'block_size': 256, 'bias': False, 'vocab_size': 65, 'dropout': 0.2}
+number of parameters: 10.65M
+eval out-ret-k4rand-s7\ckpt.pt data\shakespeare_char 2.3071
+number of parameters: 10.65M
+eval out-ret-k4rand-s7\ckpt.pt data\shakespeare_char 2.3071
+number of parameters: 10.65M
+eval out-ret-k4rand-s7\ckpt.pt data\pg_char 1.4074
