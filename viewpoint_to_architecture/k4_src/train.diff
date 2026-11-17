@@ -1,0 +1,72 @@
+--- kf_train.py	2026-11-17 01:09:27
++++ k4_train.py	2026-11-17 01:10:17
+@@ -73,6 +73,7 @@
+ dtype = 'bfloat16' if torch.cuda.is_available() and torch.cuda.is_bf16_supported() else 'float16' # 'float32', 'bfloat16', or 'float16', the latter will auto implement a GradScaler
+ compile = True # use PyTorch 2.0 to compile the model to be faster
+ seed = 1337
++form_heads = '0' # K4: 'all' = query and key thirds of every layer's c_attn are copied from form_ckpt (or kept at random init if none) and frozen; '0' = row-10 behaviour
+ form_ckpt = '' # KANTFORM: path to a phase-F checkpoint whose head-0 q/k rows are loaded and frozen
+ # -----------------------------------------------------------------------------
+ config_keys = [k for k,v in globals().items() if not k.startswith('_') and isinstance(v, (int, float, bool, str))]
+@@ -209,7 +210,33 @@
+             _at.c_attn.weight[n_embd:n_embd + _hs].copy_(_k)
+             _at.q0_init.copy_(_q); _at.k0_init.copy_(_k)
+             _mx = max(_mx, (_at.c_attn.weight[0:_hs] - _q).abs().max().item(), (_at.c_attn.weight[n_embd:n_embd + _hs] - _k).abs().max().item())
+-    print(f"form_rows loaded layers={len(model.transformer.h)} maxabs_diff_vs_ckpt {_mx}")
++    if form_heads != 'all':
++        print(f"form_rows loaded layers={len(model.transformer.h)} maxabs_diff_vs_ckpt {_mx}")
++
++# K4: all-heads freeze. Full query third and key third of every layer's c_attn weight (no bias in this config) are
++# snapshotted (from form_ckpt if given, else the model's current rows) and held by the hook (frozen_idx) and by restore after each step.
++if form_heads == 'all':
++    assert not bias
++    _mx = 0.0
++    if form_ckpt:
++        _fsd = torch.load(form_ckpt, map_location='cpu')['model']
++        _fsd = {(k[len('_orig_mod.'):] if k.startswith('_orig_mod.') else k): v for k, v in _fsd.items()}
++    with torch.no_grad():
++        for _li, _blk in enumerate(model.transformer.h):
++            _at = _blk.attn
++            if form_ckpt:
++                _src = _fsd[f'transformer.h.{_li}.attn.c_attn.weight'].to(_at.c_attn.weight.device)
++                _at.c_attn.weight[0:n_embd].copy_(_src[0:n_embd])
++                _at.c_attn.weight[n_embd:2*n_embd].copy_(_src[n_embd:2*n_embd])
++                _mx = max(_mx, (_at.c_attn.weight[0:n_embd] - _src[0:n_embd]).abs().max().item(), (_at.c_attn.weight[n_embd:2*n_embd] - _src[n_embd:2*n_embd]).abs().max().item())
++            _at.qf = _at.c_attn.weight[0:n_embd].detach().clone()
++            _at.kf = _at.c_attn.weight[n_embd:2*n_embd].detach().clone()
++            _at.q0_init.copy_(_at.qf[0:n_embd // n_head]); _at.k0_init.copy_(_at.kf[0:n_embd // n_head])
++            _at.frozen_idx = torch.arange(0, 2 * n_embd, device=_at.c_attn.weight.device)
++    if form_ckpt:
++        print(f"form_rows loaded layers={len(model.transformer.h)} heads={n_head} maxabs_diff_vs_ckpt {_mx}")
++    else:
++        print(f"form_rows frozen_at_random_init layers={len(model.transformer.h)} heads={n_head} (no form_ckpt)")
+ 
+ # initialize a GradScaler. If enabled=False scaler is a no-op
+ scaler = torch.cuda.amp.GradScaler(enabled=(dtype == 'float16'))
+@@ -333,8 +360,12 @@
+     with torch.no_grad():
+         for _blk in raw_model.transformer.h:
+             _at = _blk.attn
+-            _at.c_attn.weight[0:_at.q0_init.shape[0]].copy_(_at.q0_init)
+-            _at.c_attn.weight[_at.n_embd:_at.n_embd + _at.k0_init.shape[0]].copy_(_at.k0_init)
++            if form_heads == 'all':
++                _at.c_attn.weight[0:_at.n_embd].copy_(_at.qf)
++                _at.c_attn.weight[_at.n_embd:2*_at.n_embd].copy_(_at.kf)
++            else:
++                _at.c_attn.weight[0:_at.q0_init.shape[0]].copy_(_at.q0_init)
++                _at.c_attn.weight[_at.n_embd:_at.n_embd + _at.k0_init.shape[0]].copy_(_at.k0_init)
+     # flush the gradients as soon as we can, no need for this memory anymore
+     optimizer.zero_grad(set_to_none=True)
+ 
+@@ -362,7 +393,10 @@
+     _eq=True; _mx=0.0
+     for _blk in raw_model.transformer.h:
+         _at=_blk.attn; hs=_at.q0_init.shape[0]
+-        for _w,_i in ((_at.c_attn.weight[0:hs],_at.q0_init),(_at.c_attn.weight[_at.n_embd:_at.n_embd+hs],_at.k0_init)):
++        _pairs = ((_at.c_attn.weight[0:hs],_at.q0_init),(_at.c_attn.weight[_at.n_embd:_at.n_embd+hs],_at.k0_init))
++        if form_heads == 'all':
++            _pairs = ((_at.c_attn.weight[0:_at.n_embd],_at.qf),(_at.c_attn.weight[_at.n_embd:2*_at.n_embd],_at.kf))
++        for _w,_i in _pairs:
+             _eq = _eq and bool(torch.equal(_w,_i)); _mx=max(_mx,(_w-_i).abs().max().item())
+ print(f"frozen_rows equal {_eq} maxabs {_mx}")
+ print(f"trainable parameters {sum(p.numel() for p in raw_model.parameters() if p.requires_grad)}")
