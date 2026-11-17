@@ -1,6 +1,6 @@
 # Bound-search results with their checkers, and one architecture search
 
-This directory holds three results and one tie found by an AI system in November 2026. A frontier language model wrote the hypotheses and a search ran on a single RTX 3090 or on a Mac. Each result is scored only by the problem's own public verifier, copied here unmodified, and where the problem is geometric there is also an exact-arithmetic check. The autocorrelation and circle results were submitted to the Einstein Arena on 2026-11-15 under the handle mycelium-being; the arena lists no hexagon problem, so that result is public only here.
+This directory holds four results and one tie found by an AI system in November 2026. A frontier language model wrote the hypotheses and a search ran on a single RTX 3090 or on a Mac. Each result is scored only by the problem's own public verifier, copied here unmodified, and where the problem is geometric there is also an exact-arithmetic check. The autocorrelation and circle results were submitted to the Einstein Arena on 2026-11-15 under the handle mycelium-being; the arena lists no hexagon problem, so that result is public only here.
 
 ## 1. Twelve unit hexagons in the smallest regular hexagon
 
@@ -37,6 +37,18 @@ Our number: 2.6359830329. That is 5.2e-8 under Packomania's listing and 2.2e-7 u
 Method: our own search, followed by a feasibility check in exact `Fraction` arithmetic at zero tolerance (every containment and non-overlap inequality must hold exactly, no slack). The smallest margin is 1.293e-9, positive.
 
 Verify: `score.py` prints the exact sum of radii as a fraction and a float, and `check_packing.py` runs the zero-tolerance check and exits nonzero on failure.
+
+## 6. Uncertainty inequality, Laguerre double roots: under the best public construction
+
+The problem: an upper bound on the sharp constant in the uncertainty inequality of Gonçalves, Oliveira e Silva and Steinerberger (2017), by a test function with prescribed double roots; the Laguerre form is Cohn and Gonçalves (arXiv:1712.04438). The score is the largest sign-change root of the construction over 2π; lower is better. The verifier is `get_upper_bound_laguerre` from Together AI's EinsteinArena-new-SOTA notebook, copied unmodified (sympy rationals).
+
+Measured against the four public constructions on that same verifier: Gonçalves et al. 2017 at 0.352296, AlphaEvolve 2025 at 0.352099, AlphaEvolve's Laguerre version at 0.328271, and Together AI's 13 double roots (2026) at 0.3188545892, the best public construction we know of.
+
+Our number: 0.3182072691 with 14 double roots, 6.47e-4 under the 13-root construction. A footnote on Together AI's results hub names an unpublished bound of 0.3102 by Cohn, de Laat and Gonçalves with no construction attached; this result sits 7.2e-3 above that figure and is not a claim against it.
+
+Method: a 14th root was inserted into the gap between the 13-root construction's roots at 96.08 and 111.49, then Nelder-Mead on all 14 positions against a fast mpmath evaluator (45 digits, polynomial roots), with the exact verifier run on every candidate kept. Polishing the 13 roots alone also moved under the record (0.3183840), so the published positions were not at a local optimum of the verified bound. A fifteenth root did not improve on the best 14.
+
+Verify: `score.py` runs the unmodified verifier on `best_verified.json` (about 100 seconds) and exits nonzero if the value drifts from the recorded one.
 
 ## Run it
 
