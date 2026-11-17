@@ -1,0 +1,94 @@
+D:\mycelium\vta\nanoGPT_k4\train.py:242: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=(dtype == 'float16'))
+Overriding config with config\train_shakespeare_char.py:
+# train a miniature character-level shakespeare model
+# good for debugging and playing on macbooks and such
+
+out_dir = 'out-shakespeare-char'
+eval_interval = 250 # keep frequent because we'll overfit
+eval_iters = 200
+log_interval = 10 # don't print too too often
+
+# we expect to overfit on this small dataset, so only save when val improves
+always_save_checkpoint = False
+
+wandb_log = False # override via command line if you like
+wandb_project = 'shakespeare-char'
+wandb_run_name = 'mini-gpt'
+
+dataset = 'shakespeare_char'
+gradient_accumulation_steps = 1
+batch_size = 64
+block_size = 256 # context of up to 256 previous characters
+
+# baby GPT model :)
+n_layer = 6
+n_head = 6
+n_embd = 384
+dropout = 0.2
+
+learning_rate = 1e-3 # with baby networks can afford to go a bit higher
+max_iters = 5000
+lr_decay_iters = 5000 # make equal to max_iters usually
+min_lr = 1e-4 # learning_rate / 10 usually
+beta2 = 0.99 # make a bit bigger because number of tokens per iter is small
+
+warmup_iters = 100 # not super necessary potentially
+
+# on macbook also add
+# device = 'cpu'  # run on cpu only
+# compile = False # do not torch compile the model
+
+Overriding: compile = False
+Overriding: seed = 42
+Overriding: init_from = resume
+Overriding: out_dir = out-ret-k4-s42
+Overriding: dataset = pg_char
+Overriding: max_iters = 4250
+Overriding: lr_decay_iters = 4250
+Overriding: decay_lr = False
+Overriding: learning_rate = 0.0001
+Overriding: warmup_iters = 0
+Overriding: eval_interval = 250
+Overriding: log_interval = 250
+Overriding: eval_iters = 200
+Overriding: always_save_checkpoint = True
+Overriding: form_heads = all
+Overriding: form_ckpt = D:\mycelium\vta\nanoGPT\out-form2-s42\ckpt.pt
+tokens per iteration will be: 16,384
+found vocab_size = 65 (inside data\pg_char\meta.pkl)
+Resuming training from out-ret-k4-s42
+number of parameters: 10.65M
+form_rows loaded layers=6 heads=6 maxabs_diff_vs_ckpt 0.0
+num decayed parameter tensors: 26, with 10,740,096 parameters
+num non-decayed parameter tensors: 13, with 4,992 parameters
+using fused AdamW: True
+step 2250: train loss 2.0390, val loss 2.0015
+saving checkpoint to out-ret-k4-s42
+iter 2250: loss 2.0778, time 23214.95ms, mfu -100.00%
+step 2500: train loss 1.1762, val loss 1.3850
+saving checkpoint to out-ret-k4-s42
+iter 2500: loss 1.2858, time 25172.99ms, mfu 0.01%
+step 2750: train loss 1.0609, val loss 1.3557
+saving checkpoint to out-ret-k4-s42
+iter 2750: loss 1.1955, time 25126.16ms, mfu 0.01%
+step 3000: train loss 0.9831, val loss 1.3638
+saving checkpoint to out-ret-k4-s42
+iter 3000: loss 1.0773, time 19647.01ms, mfu 0.02%
+step 3250: train loss 0.9159, val loss 1.3668
+saving checkpoint to out-ret-k4-s42
+iter 3250: loss 1.0449, time 19969.60ms, mfu 0.02%
+step 3500: train loss 0.8570, val loss 1.3904
+saving checkpoint to out-ret-k4-s42
+iter 3500: loss 0.9929, time 20202.77ms, mfu 0.02%
+step 3750: train loss 0.7975, val loss 1.4167
+saving checkpoint to out-ret-k4-s42
+iter 3750: loss 0.9383, time 20102.74ms, mfu 0.02%
+step 4000: train loss 0.7427, val loss 1.4399
+saving checkpoint to out-ret-k4-s42
+iter 4000: loss 0.9097, time 19557.99ms, mfu 0.02%
+step 4250: train loss 0.6897, val loss 1.4770
+saving checkpoint to out-ret-k4-s42
+iter 4250: loss 0.8368, time 19194.27ms, mfu 0.02%
+frozen_rows equal True maxabs 0.0
+trainable parameters 10745088
