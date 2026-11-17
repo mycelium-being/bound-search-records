@@ -1,6 +1,6 @@
 # Bound-search results with their checkers, and one architecture search
 
-This directory holds four results and one tie found by an AI system in November 2026. A frontier language model wrote the hypotheses and a search ran on a single RTX 3090 or on a Mac. Each result is scored only by the problem's own public verifier, copied here unmodified, and where the problem is geometric there is also an exact-arithmetic check. The autocorrelation and circle results were submitted to the Einstein Arena on 2026-11-15 under the handle mycelium-being; the arena lists no hexagon problem, so that result is public only here.
+This directory holds five results and one tie found by an AI system in November 2026. A frontier language model wrote the hypotheses and a search ran on a single RTX 3090 or on a Mac. Each result is scored only by the problem's own public verifier, copied here unmodified, and where the problem is geometric there is also an exact-arithmetic check. The autocorrelation and circle results were submitted to the Einstein Arena on 2026-11-15 under the handle mycelium-being; the arena lists no hexagon problem, so that result is public only here.
 
 ## 1. Twelve unit hexagons in the smallest regular hexagon
 
@@ -49,6 +49,18 @@ Our number: 0.3182072691 with 14 double roots, 6.47e-4 under the 13-root constru
 Method: a 14th root was inserted into the gap between the 13-root construction's roots at 96.08 and 111.49, then Nelder-Mead on all 14 positions against a fast mpmath evaluator (45 digits, polynomial roots), with the exact verifier run on every candidate kept. Polishing the 13 roots alone also moved under the record (0.3183840), so the published positions were not at a local optimum of the verified bound. A fifteenth root did not improve on the best 14.
 
 Verify: `score.py` runs the unmodified verifier on `best_verified.json` (about 100 seconds) and exits nonzero if the value drifts from the recorded one.
+
+## 7. The prime number theorem certificate: above the best public construction
+
+The problem: Problem 6.27 of "Mathematical exploration and discovery at scale" (arXiv:2511.02864). A partial function f on a finite set of positive integers is a certificate for the prime number theorem when the sum of f(k) floor(x/k) over its keys stays at most 1 for every x in [1, 10 * largest key]; the score is minus the sum of f(k) log(k) / k, with f(1) adjusted so the sum of f(k)/k is zero. Higher is better and 1 is the supremum. The verifier is `evaluate` from Together AI's EinsteinArena-new-SOTA notebook, copied unmodified: values clipped to [-10, 10], ten million uniform samples with seed 42, any sample over 1.0001 scores minus infinity.
+
+Measured against the two public constructions on that same verifier: AlphaEvolve 2025 at 0.921292023 with 5 keys, and Together AI 2026 at 0.994179461378 with 1,785 squarefree keys up to 2999, the best public construction we know of.
+
+Our number: 0.9944937745877319 with all 2,999 integer keys from 1 to 2999, 3.14e-4 over the 1,785-key construction.
+
+Method: the verifier's sample x is real, but floor(x/k) for integer k depends only on floor(x), so the constraint is exactly a finite set of linear inequalities, one for each integer x up to 29,990. For a fixed key set the certificate is then a linear program in the values f(k), solved exactly by cutting planes (`lp_ckpt.py`, scipy's HiGHS, single thread, 7 rounds, 13,654 active constraints, 27,283 seconds on one desktop core). The same program over the 1,785-key set returns the published 0.994179461378 to eleven digits, so that construction is already optimal on its own keys and the gain here comes from the key set alone. The arena's copy of the verifier accepts at most 2,000 keys, so this construction is public only here.
+
+Verify: `score.py` runs the unmodified verifier on `best_verified.json` (about one to two minutes) and exits nonzero if the value drifts from the recorded one.
 
 ## Run it
 
